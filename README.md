@@ -2,7 +2,7 @@
 
 **Strip AI typography. Write like a human.**
 
-HumanType detects and replaces the typographic symbols that AI language models habitually produce — em dashes, curly quotes, ellipses, non-breaking spaces, and more — substituting plain ASCII equivalents that read as naturally human-written text.
+HumanType detects and replaces the typographic symbols that AI language models habitually produce – em dashes, curly quotes, ellipses, non-breaking spaces, and more – substituting plain ASCII equivalents that read as naturally human-written text.
 
 🌐 **Live site:** https://humantype.sherhn.space/
 
