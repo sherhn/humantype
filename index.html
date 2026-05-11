@@ -579,7 +579,7 @@ const GROUPS = [
     ]
   },
   {
-    id: 'quotes', title: 'Quotes & apostrophe',
+    id: 'quotes', title: 'Quotes and apostrophe',
     rules: [
       { id: 'apos',      label: ['\u2018 \u2019', '→', "' straight"], fn: t => re(t, /[\u2018\u2019]/g, "'") },
       { id: 'guillemets',label: ['« »',            '→', '" straight'], fn: t => re(t, /[\u00AB\u00BB]/g, '"') },
@@ -595,7 +595,7 @@ const GROUPS = [
     ]
   },
   {
-    id: 'fractions', title: 'Fractions & math',
+    id: 'fractions', title: 'Fractions and math',
     rules: [
       { id: 'half',         label: ['½', '→', '1/2'], fn: t => re(t, /½/g, '1/2') },
       { id: 'quarter',      label: ['¼', '→', '1/4'], fn: t => re(t, /¼/g, '1/4') },
