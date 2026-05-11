@@ -440,6 +440,41 @@
   footer { margin-top: 40px; text-align: center; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
   footer a { color: var(--muted); text-decoration: none; }
   footer a:hover { color: var(--accent); }
+
+  /* ── Highlight backdrop ── */
+  .textarea-wrap {
+    position: relative;
+  }
+  #input-backdrop {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    border: 1px solid transparent;
+    padding: 14px 16px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: transparent;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow-y: auto;
+    box-sizing: border-box;
+    pointer-events: none;
+    z-index: 0;
+    background: transparent;
+  }
+  #input-backdrop mark {
+    background: rgba(184, 74, 26, 0.25);
+    color: transparent;
+    border-radius: 2px;
+    outline: 1.5px solid rgba(184, 74, 26, 0.6);
+  }
+  textarea#input {
+    position: relative;
+    background: transparent;
+    z-index: 1;
+  }
 </style>
 </head>
 <body>
@@ -477,7 +512,10 @@
 
   <div class="card">
     <span class="section-label">Input text</span>
-    <textarea id="input" placeholder="Paste text with AI typographic symbols here..."></textarea>
+    <div class="textarea-wrap">
+      <div id="input-backdrop"></div>
+      <textarea id="input" placeholder="Paste text with AI typographic symbols here..."></textarea>
+    </div>
     <div class="stats">
       <span>Symbols found: <span class="count-badge" id="input-count">0</span></span>
     </div>
@@ -679,6 +717,7 @@ function refreshUI() {
   const activeCount = ALL_RULES.filter(r => enabled[r.id]).length;
   document.getElementById('active-badge').textContent = `${activeCount} / ${ALL_RULES.length}`;
   updateInputCount();
+  updateHighlight();
 }
 
 function toggleRule(id) {
@@ -756,6 +795,7 @@ function clearAll() {
   document.getElementById('replaced-count').textContent = '0';
   document.getElementById('stat-details').innerHTML = '';
   document.getElementById('input').focus();
+  updateHighlight();
 }
 
 function copyResult() {
@@ -775,9 +815,71 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
 }
 
+function buildHighlightPattern() {
+  const patterns = [];
+  for (const rule of ALL_RULES) {
+    if (!enabled[rule.id]) continue;
+    // Extract the regex source from the rule function by running it on a dummy
+    // Instead, rebuild from GROUPS directly
+  }
+  // Collect all active regexes
+  const parts = [];
+  for (const rule of ALL_RULES) {
+    if (!enabled[rule.id]) continue;
+    // Get the regex by checking what the fn uses – we'll extract via toString
+    const src = rule.fn.toString();
+    const m = src.match(/re\(t,\s*(\/[^/]+\/[gim]*)/);
+    if (m) parts.push(m[1]);
+  }
+  if (parts.length === 0) return null;
+  try {
+    return new RegExp(parts.map(p => {
+      const inner = p.replace(/^\//, '').replace(/\/[gim]*$/, '');
+      return inner;
+    }).join('|'), 'gm');
+  } catch(e) { return null; }
+}
+
+function updateHighlight() {
+  const backdrop = document.getElementById('input-backdrop');
+  if (!backdrop) return;
+  const ta = document.getElementById('input');
+  const text = ta.value;
+
+  // Sync height so backdrop matches textarea
+  backdrop.style.height = ta.offsetHeight + 'px';
+  backdrop.style.overflowY = 'auto';
+  backdrop.scrollTop = ta.scrollTop;
+
+  const pattern = buildHighlightPattern();
+  if (!pattern || !text) {
+    backdrop.innerHTML = esc(text) + '\n';
+    backdrop.scrollTop = ta.scrollTop;
+    return;
+  }
+  backdrop.innerHTML = escapeWithMarks(text, pattern) + '\n';
+  backdrop.scrollTop = ta.scrollTop;
+}
+
+function escapeWithMarks(text, pattern) {
+  let result = '';
+  let lastIndex = 0;
+  pattern.lastIndex = 0;
+  let m;
+  while ((m = pattern.exec(text)) !== null) {
+    result += esc(text.slice(lastIndex, m.index));
+    result += `<mark>${esc(m[0])}</mark>`;
+    lastIndex = m.index + m[0].length;
+    if (m[0].length === 0) { pattern.lastIndex++; } // avoid infinite loop
+  }
+  result += esc(text.slice(lastIndex));
+  return result;
+}
+
 // ── Init ──────────────────────────────────────────────────────────────────────
 renderGroups();
-document.getElementById('input').addEventListener('input', updateInputCount);
+document.getElementById('input').addEventListener('input', () => { updateInputCount(); updateHighlight(); });
+document.getElementById('input').addEventListener('scroll', updateHighlight);
 document.getElementById('input').addEventListener('keydown', e => {
   if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') doReplace();
 });
