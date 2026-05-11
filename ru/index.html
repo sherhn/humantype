@@ -529,58 +529,58 @@ const GROUPS = [
   {
     id: 'dashes', title: 'Тире',
     rules: [
-      { id: 'bullet_line',  label: ['•', '->', '- (нач. строки)'], fn: t => re(t, /^•[ \t]*/gm,   '- ') },
-      { id: 'emdash_line',  label: ['–', '->', '- (нач. строки)'], fn: t => re(t, /^–[ \t]*/gm,   '- ') },
-      { id: 'emdash',       label: ['–', '->', '– en dash'],       fn: t => re(t, /–/g,             '–') },
+      { id: 'bullet_line',  label: ['•', '→', '- (нач. строки)'], fn: t => re(t, /^•[ \t]*/gm,   '- ') },
+      { id: 'emdash_line',  label: ['—', '→', '- (нач. строки)'], fn: t => re(t, /^—[ \t]*/gm,   '- ') },
+      { id: 'emdash',       label: ['—', '→', '– en dash'],       fn: t => re(t, /—/g,             '–') },
     ]
   },
   {
     id: 'ellipsis', title: 'Многоточие',
     rules: [
-      { id: 'ellipsis', label: ['...', '->', '...'], fn: t => re(t, /.../g, '...') },
+      { id: 'ellipsis', label: ['…', '→', '...'], fn: t => re(t, /…/g, '...') },
     ]
   },
   {
     id: 'quotes', title: 'Кавычки и апостроф',
     rules: [
-      { id: 'apos',      label: ['\u2018 \u2019', '->', "' прямой"], fn: t => re(t, /[\u2018\u2019]/g, "'") },
-      { id: 'guillemets',label: ['" "',            '->', '" прямая'], fn: t => re(t, /[\u00AB\u00BB]/g, '"') },
-      { id: 'curly',     label: ['\u201C \u201D',  '->', '" прямая'], fn: t => re(t, /[\u201C\u201D]/g, '"') },
+      { id: 'apos',      label: ['\u2018 \u2019', '→', "' прямой"], fn: t => re(t, /[\u2018\u2019]/g, "'") },
+      { id: 'guillemets',label: ['« »',            '→', '" прямая'], fn: t => re(t, /[\u00AB\u00BB]/g, '"') },
+      { id: 'curly',     label: ['\u201C \u201D',  '→', '" прямая'], fn: t => re(t, /[\u201C\u201D]/g, '"') },
     ]
   },
   {
     id: 'spaces', title: 'Спец. пробелы',
     rules: [
-      { id: 'nbsp', label: ['NBSP U+00A0', '->', 'пробел'], fn: t => re(t, /\u00A0/g, ' ') },
-      { id: 'thin', label: ['тонкий U+2009','->', 'пробел'], fn: t => re(t, /\u2009/g, ' ') },
-      { id: 'hair', label: ['волос. U+200A','->', 'пробел'], fn: t => re(t, /\u200A/g, ' ') },
+      { id: 'nbsp', label: ['NBSP U+00A0', '→', 'пробел'], fn: t => re(t, /\u00A0/g, ' ') },
+      { id: 'thin', label: ['тонкий U+2009','→', 'пробел'], fn: t => re(t, /\u2009/g, ' ') },
+      { id: 'hair', label: ['волос. U+200A','→', 'пробел'], fn: t => re(t, /\u200A/g, ' ') },
     ]
   },
   {
     id: 'fractions', title: 'Дроби и математика',
     rules: [
-      { id: 'half',         label: ['\u00BD', '->', '1/2'], fn: t => re(t, /\u00BD/g, '1/2') },
-      { id: 'quarter',      label: ['\u00BC', '->', '1/4'], fn: t => re(t, /\u00BC/g, '1/4') },
-      { id: 'threequarter', label: ['\u00BE', '->', '3/4'], fn: t => re(t, /\u00BE/g, '3/4') },
-      { id: 'times',        label: ['\u00D7', '->', '*'],   fn: t => re(t, /\u00D7/g, '*')  },
+      { id: 'half',         label: ['½', '→', '1/2'], fn: t => re(t, /½/g, '1/2') },
+      { id: 'quarter',      label: ['¼', '→', '1/4'], fn: t => re(t, /¼/g, '1/4') },
+      { id: 'threequarter', label: ['¾', '→', '3/4'], fn: t => re(t, /¾/g, '3/4') },
+      { id: 'times',        label: ['×', '→', '*'],   fn: t => re(t, /×/g,  '*')  },
     ]
   },
   {
     id: 'legal', title: 'Правовые знаки',
     rules: [
-      { id: 'reg',    label: ['\u00AE',   '->', '(R)'],  fn: t => re(t, /\u00AE/g,    '(R)')  },
-      { id: 'tm',     label: ['\u2122',   '->', '(TM)'], fn: t => re(t, /\u2122/g,    '(TM)') },
-      { id: 'copy',   label: ['\u00A9',   '->', '(c)'],  fn: t => re(t, /\u00A9/g,    '(c)')  },
-      { id: 'dagger', label: ['* *', '->', '*'],    fn: t => re(t, /[**]/g, '*')    },
+      { id: 'reg',    label: ['®',   '→', '(R)'],  fn: t => re(t, /®/g,    '(R)')  },
+      { id: 'tm',     label: ['™',   '→', '(TM)'], fn: t => re(t, /™/g,    '(TM)') },
+      { id: 'copy',   label: ['©',   '→', '(c)'],  fn: t => re(t, /©/g,    '(c)')  },
+      { id: 'dagger', label: ['† ‡', '→', '*'],    fn: t => re(t, /[†‡]/g, '*')    },
     ]
   },
   {
     id: 'arrows', title: 'Стрелки',
     rules: [
-      { id: 'arr_right',  label: ['-> ->', '->', '->'], fn: t => re(t, /[->->]/g, '->') },
-      { id: 'arr_dright', label: ['=>',   '->', '=>'], fn: t => re(t, /=>/g,    '=>') },
-      { id: 'arr_left',   label: ['<-',   '->', '<-'], fn: t => re(t, /<-/g,    '<-') },
-      { id: 'arr_dleft',  label: ['<=',   '->', '<='], fn: t => re(t, /<=/g,    '<=') },
+      { id: 'arr_right',  label: ['→ ➔', '→', '->'], fn: t => re(t, /[→➔]/g, '->') },
+      { id: 'arr_dright', label: ['⇒',   '→', '=>'], fn: t => re(t, /⇒/g,    '=>') },
+      { id: 'arr_left',   label: ['←',   '→', '<-'], fn: t => re(t, /←/g,    '<-') },
+      { id: 'arr_dleft',  label: ['⇐',   '→', '<='], fn: t => re(t, /⇐/g,    '<=') },
     ]
   },
 ];
@@ -594,32 +594,63 @@ function re(text, regex, replacement) {
   const result = text.replace(regex, m => { count++; return replacement; });
   return { result, count };
 }
-function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ── Render ────────────────────────────────────────────────────────────────────
 function renderGroups() {
   const grid = document.getElementById('groups-grid');
   grid.innerHTML = '';
+
   for (const group of GROUPS) {
-    const box = document.createElement('div'); box.className = 'group-box';
-    const hdr = document.createElement('div'); hdr.className = 'group-header';
+    const box = document.createElement('div');
+    box.className = 'group-box';
+
+    // Group header
+    const hdr = document.createElement('div');
+    hdr.className = 'group-header';
+
     const gchk = document.createElement('div');
-    gchk.className = 'group-check'; gchk.id = 'gchk-' + group.id;
+    gchk.className = 'group-check';
+    gchk.id = 'gchk-' + group.id;
     gchk.onclick = e => { e.stopPropagation(); toggleGroup(group.id); };
+
     const gtitle = document.createElement('div');
-    gtitle.className = 'group-title'; gtitle.textContent = group.title;
+    gtitle.className = 'group-title';
+    gtitle.textContent = group.title;
     gtitle.onclick = () => toggleGroup(group.id);
-    hdr.appendChild(gchk); hdr.appendChild(gtitle); box.appendChild(hdr);
+
+    hdr.appendChild(gchk);
+    hdr.appendChild(gtitle);
+    box.appendChild(hdr);
+
+    // Rules
     for (const rule of group.rules) {
-      const row = document.createElement('div'); row.className = 'rule-row'; row.id = 'row-' + rule.id;
+      const row = document.createElement('div');
+      row.className = 'rule-row';
+      row.id = 'row-' + rule.id;
       row.onclick = () => toggleRule(rule.id);
-      const rchk = document.createElement('div'); rchk.className = 'rule-check'; rchk.id = 'rchk-' + rule.id;
-      const lbl = document.createElement('div'); lbl.className = 'rule-label';
+
+      const rchk = document.createElement('div');
+      rchk.className = 'rule-check';
+      rchk.id = 'rchk-' + rule.id;
+
+      const lbl = document.createElement('div');
+      lbl.className = 'rule-label';
+      // label is [sym, arr, rep]
       const [sym, arr, rep] = rule.label;
       lbl.innerHTML = `<span class="sym">${esc(sym)}</span><span class="arr">${esc(arr)}</span><span class="rep">${esc(rep)}</span>`;
-      row.appendChild(rchk); row.appendChild(lbl); box.appendChild(row);
+
+      row.appendChild(rchk);
+      row.appendChild(lbl);
+      box.appendChild(row);
     }
+
     grid.appendChild(box);
   }
+
   refreshUI();
 }
 
@@ -629,51 +660,82 @@ function refreshUI() {
     const row = document.getElementById('row-' + rule.id);
     if (!chk) continue;
     const on = enabled[rule.id];
-    chk.classList.toggle('on', on); chk.textContent = on ? '✓' : '';
+    chk.classList.toggle('on', on);
+    chk.textContent = on ? '✓' : '';
     row.classList.toggle('off', !on);
   }
+
   for (const group of GROUPS) {
-    const chk = document.getElementById('gchk-' + group.id); if (!chk) continue;
+    const chk = document.getElementById('gchk-' + group.id);
+    if (!chk) continue;
     const states = group.rules.map(r => enabled[r.id]);
-    const allOn = states.every(Boolean); const anyOn = states.some(Boolean);
-    chk.classList.toggle('on', allOn); chk.classList.toggle('partial', !allOn && anyOn);
+    const allOn  = states.every(Boolean);
+    const anyOn  = states.some(Boolean);
+    chk.classList.toggle('on',      allOn);
+    chk.classList.toggle('partial', !allOn && anyOn);
     chk.textContent = allOn ? '✓' : (!allOn && anyOn ? '–' : '');
   }
+
   const activeCount = ALL_RULES.filter(r => enabled[r.id]).length;
   document.getElementById('active-badge').textContent = `${activeCount} / ${ALL_RULES.length}`;
   updateInputCount();
 }
 
-function toggleRule(id) { enabled[id] = !enabled[id]; refreshUI(); }
+function toggleRule(id) {
+  enabled[id] = !enabled[id];
+  refreshUI();
+}
+
 function toggleGroup(groupId) {
   const group = GROUPS.find(g => g.id === groupId);
   const allOn = group.rules.every(r => enabled[r.id]);
-  group.rules.forEach(r => { enabled[r.id] = !allOn; }); refreshUI();
+  group.rules.forEach(r => { enabled[r.id] = !allOn; });
+  refreshUI();
 }
-function selectAll(on) { ALL_RULES.forEach(r => { enabled[r.id] = on; }); refreshUI(); }
+
+function selectAll(on) {
+  ALL_RULES.forEach(r => { enabled[r.id] = on; });
+  refreshUI();
+}
+
+// ── Panel toggle ──────────────────────────────────────────────────────────────
 function toggleRules() {
   document.getElementById('rules-header').classList.toggle('open');
   document.getElementById('rules-body').classList.toggle('open');
 }
+
+// ── Count & replace ───────────────────────────────────────────────────────────
 function countEnabled(text) {
   let total = 0;
-  for (const rule of ALL_RULES) { if (enabled[rule.id]) total += rule.fn(text).count; }
+  for (const rule of ALL_RULES) {
+    if (enabled[rule.id]) total += rule.fn(text).count;
+  }
   return total;
 }
+
 function updateInputCount() {
   document.getElementById('input-count').textContent = countEnabled(document.getElementById('input').value);
 }
+
 function doReplace() {
   let text = document.getElementById('input').value;
-  let total = 0; const details = [];
+  let total = 0;
+  const details = [];
+
   for (const rule of ALL_RULES) {
     if (!enabled[rule.id]) continue;
-    const { result, count } = rule.fn(text); text = result;
+    const { result, count } = rule.fn(text);
+    text = result;
     if (count > 0) { total += count; details.push({ rule, count }); }
   }
+
   document.getElementById('output').value = text;
   const badge = document.getElementById('replaced-count');
-  badge.textContent = total; badge.classList.remove('pop'); void badge.offsetWidth; badge.classList.add('pop');
+  badge.textContent = total;
+  badge.classList.remove('pop');
+  void badge.offsetWidth;
+  badge.classList.add('pop');
+
   const detEl = document.getElementById('stat-details');
   if (details.length > 0) {
     detEl.innerHTML = details.map(({ rule, count }) =>
@@ -682,9 +744,11 @@ function doReplace() {
     showToast(`Заменено ${total} символов`);
   } else {
     detEl.innerHTML = '';
-    showToast(ALL_RULES.every(r => !enabled[r.id]) ? 'Все правила отключены' : 'Символов не найдено');
+    const noneEnabled = ALL_RULES.every(r => !enabled[r.id]);
+    showToast(noneEnabled ? 'Все правила отключены' : 'Символов не найдено');
   }
 }
+
 function clearAll() {
   document.getElementById('input').value = '';
   document.getElementById('output').value = '';
@@ -693,6 +757,7 @@ function clearAll() {
   document.getElementById('stat-details').innerHTML = '';
   document.getElementById('input').focus();
 }
+
 function copyResult() {
   const out = document.getElementById('output');
   if (!out.value) { showToast('Результат пуст'); return; }
@@ -700,13 +765,17 @@ function copyResult() {
     .then(() => showToast('Скопировано в буфер обмена'))
     .catch(() => { out.select(); document.execCommand('copy'); showToast('Скопировано!'); });
 }
+
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById('toast');
-  t.textContent = msg; t.classList.add('show');
-  clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
 }
 
+// ── Init ──────────────────────────────────────────────────────────────────────
 renderGroups();
 document.getElementById('input').addEventListener('input', updateInputCount);
 document.getElementById('input').addEventListener('keydown', e => {
