@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How HumanType Works – Hide AI Typography Symbols</title>
+<meta name="description" content="Learn what typographic symbols are, why AI text contains them, and how replacing them helps bypass AI detectors. A complete guide to HumanType.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://humantype.sherhn.space/how-it-works.html">
+<link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/how-it-works.html">
+<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/how-it-works.html">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8;
+    --paper: #fffdf7;
+    --ink: #1a1208;
+    --accent: #b84a1a;
+    --muted: #8a7a62;
+    --border: #d4c9b0;
+    --shadow: rgba(26, 18, 8, 0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Courier Prime', monospace;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg, transparent, transparent 27px,
+      rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px
+    );
+    pointer-events: none;
+    z-index: 0;
+  }
+  .site-header {
+    width: 100%;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 4px var(--shadow);
+  }
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .site-logo .logo-svg { width: 36px; height: 36px; }
+  .site-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .site-logo-text span { color: var(--accent); }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .site-nav a {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover,
+  .site-nav a.active {
+    color: var(--ink);
+    border-color: var(--border);
+    background: rgba(180,160,120,0.1);
+  }
+  .lang-switch { display: flex; gap: 0; margin-left: 8px; }
+  .lang-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    border: 1.5px solid var(--border);
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.15s;
+  }
+  .lang-btn:first-child { border-right: none; }
+  .lang-btn.active {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+  }
+  .lang-btn:not(.active):hover {
+    background: var(--border);
+    color: var(--ink);
+  }
+  .main-wrapper {
+    width: 100%;
+    max-width: 860px;
+    padding: 48px 24px 32px;
+    position: relative;
+    z-index: 1;
+  }
+  .article-card {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    box-shadow: 4px 4px 0 var(--shadow), 8px 8px 0 rgba(26,18,8,0.05);
+    padding: 40px 44px;
+    margin-bottom: 24px;
+    position: relative;
+  }
+  .article-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .article-meta {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed var(--border);
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    color: var(--accent);
+    margin: 28px 0 12px;
+    font-weight: 700;
+  }
+  h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    color: var(--ink);
+    margin: 20px 0 8px;
+    font-weight: 700;
+  }
+  p {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #3a3a38;
+    margin-bottom: 12px;
+  }
+  ul, ol {
+    font-size: 0.9rem;
+    line-height: 1.75;
+    color: #3a3a38;
+    margin-bottom: 14px;
+    padding-left: 24px;
+  }
+  li { margin-bottom: 4px; }
+  code {
+    background: rgba(180,160,120,0.18);
+    padding: 2px 6px;
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.85rem;
+  }
+  .callout {
+    background: #fef9f0;
+    border-left: 4px solid var(--accent);
+    padding: 14px 18px;
+    margin: 18px 0;
+    font-size: 0.85rem;
+    color: var(--muted);
+  }
+  .site-footer {
+    width: 100%;
+    background: var(--paper);
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+  }
+  .site-footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .footer-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  @media (max-width: 640px) {
+    .site-header-inner { flex-direction: column; align-items: flex-start; }
+    .article-card { padding: 28px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType logo" role="img">
+        <rect fill="#1a1208" width="200" height="200" rx="4"/>
+        <rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/>
+        <rect fill="#b84a1a" x="8" y="8" width="184" height="7"/>
+        <rect fill="#fffdf7" x="38" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="142" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="38" y="90" width="124" height="20"/>
+        <rect fill="#b84a1a" x="142" y="132" width="20" height="20"/>
+      </svg>
+      <div class="site-logo-text">Human<span>Type</span></div>
+    </a>
+    <nav class="site-nav">
+      <a href="/">Tool</a>
+      <a href="/how-it-works.html" class="active">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog/ai-detectors-myths.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <span class="lang-switch">
+        <a href="/how-it-works.html" class="lang-btn active">EN</a>
+        <a href="/ru/how-it-works.html" class="lang-btn">RU</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div class="main-wrapper">
+  <article class="article-card">
+    <h1>How HumanType Works: The Complete Guide</h1>
+    <div class="article-meta">Last updated: May 2026 · Reading time: 7 min</div>
+
+    <h2>What are typographic symbols?</h2>
+    <p>Typographic symbols are special Unicode characters that go beyond basic ASCII. They include em dashes (—), curly quotes (“ ”), the ellipsis character (…), non-breaking spaces, and dozens more. These symbols are designed to make text look polished in print and professional typesetting. But in the digital world, they can become a liability.</p>
+
+    <h2>Why does AI-generated text contain them?</h2>
+    <p>Large language models (LLMs) like GPT-4, Claude, and others are trained on vast corpora of professionally edited text — books, articles, and academic papers. These sources are rich in typographic symbols because they were originally formatted with professional typesetting tools. When an AI generates text, it replicates these formatting patterns, including the use of em dashes instead of hyphens, curly quotes instead of straight quotes, and the single-glyph ellipsis (…) instead of three dots (...).</p>
+    <p>For the AI, these are just tokens. The model doesn't know or care that <code>—</code> and <code>-</code> are visually different; it simply reproduces what it has seen during training.</p>
+
+    <h2>How do AI detectors use typographic symbols?</h2>
+    <p>AI detection tools (like GPTZero, Originality.ai, Turnitin's AI detection) look at multiple signals: perplexity, burstiness, semantic patterns, and — importantly — typographic fingerprints. The presence of certain Unicode characters is a statistically significant indicator that a text was machine-generated rather than human-typed.</p>
+    <p>Most humans don't know how to type an em dash. They use a hyphen (-) or a double hyphen (--). They don't insert a non-breaking space; they just hit the spacebar. They don't use the Unicode ellipsis; they type three periods. These small differences form a detectable pattern.</p>
+
+    <div class="callout">
+      <strong>Key insight:</strong> Typographic symbols are not the only detection signal, but they are one of the easiest to remove. By normalizing them to plain ASCII, you directly reduce the statistical markers that AI detectors rely on.
+    </div>
+
+    <h2>What does HumanType replace?</h2>
+    <p>HumanType applies 19 replacement rules across 7 categories:</p>
+    <ul>
+      <li><strong>Dashes:</strong> Em dashes (—) at line starts become hyphens; inline em dashes become en dashes (–). Bullet points (•) become hyphens.</li>
+      <li><strong>Ellipsis:</strong> The single Unicode glyph (…) becomes three separate dots (...).</li>
+      <li><strong>Quotes:</strong> Curly single quotes (‘ ’), curly double quotes (“ ”), and guillemets (« ») become straight ASCII equivalents (' and ").</li>
+      <li><strong>Special spaces:</strong> Non-breaking space (U+00A0), thin space (U+2009), and hair space (U+200A) become regular spaces.</li>
+      <li><strong>Fractions & math:</strong> ½ → 1/2, ¼ → 1/4, ¾ → 3/4, × → *.</li>
+      <li><strong>Legal symbols:</strong> ® → (R), ™ → (TM), © → (c), † ‡ → *.</li>
+      <li><strong>Arrows:</strong> → ➔ → ->, ⇒ → =>, ← → <-, ⇐ → <=.</li>
+    </ul>
+
+    <h2>Does this affect readability?</h2>
+    <p>No. The replacements are designed to preserve meaning while changing only the underlying character codes. An en dash (–) looks almost identical to an em dash (—) to a human reader but carries a different statistical signature. Three dots (...) read the same as the ellipsis glyph (…). The text remains fully readable and professional.</p>
+
+    <h2>Is this enough to bypass AI detection?</h2>
+    <p>Typographic normalization alone is not a silver bullet. Sophisticated AI detectors also analyze sentence structure, vocabulary distribution, and semantic coherence. However, removing typographic "tells" is a critical first step that reduces several detection signals simultaneously. Combined with other humanization techniques (varying sentence length, adding minor imperfections, injecting personal voice), it significantly improves the chances of passing AI detection.</p>
+
+    <h2>Privacy and security</h2>
+    <p>HumanType runs entirely in your browser. No text is ever sent to a server. The JavaScript code processes everything locally, so your content remains private and secure. There are no analytics, no tracking, and no data collection.</p>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-links">
+      <a href="/">Tool</a>
+      <a href="/how-it-works.html">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog/ai-detectors-myths.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 HumanType – typographic symbols → plain human characters</div>
+  </div>
+</footer>
+
+</body>
+</html>

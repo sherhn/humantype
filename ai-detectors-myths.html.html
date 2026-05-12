@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How AI Detectors Work: Myths and Reality – HumanType Blog</title>
+<meta name="description" content="Understand the real signals AI detectors use — from perplexity to typographic fingerprints. Debunk common myths about AI detection.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://humantype.sherhn.space/blog/ai-detectors-myths.html">
+<link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/blog/ai-detectors-myths.html">
+<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/blog/ai-detectors-myths.html">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8; --paper: #fffdf7; --ink: #1a1208; --accent: #b84a1a; --muted: #8a7a62; --border: #d4c9b0; --shadow: rgba(26,18,8,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Courier Prime', monospace;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; position: relative;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px);
+    pointer-events: none; z-index: 0;
+  }
+  .site-header { width:100%; background:var(--paper); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; box-shadow:0 1px 4px var(--shadow); }
+  .site-header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; flex-wrap:wrap; gap:16px; }
+  .site-logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .site-logo .logo-svg { width:36px; height:36px; }
+  .site-logo-text { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
+  .site-logo-text span { color:var(--accent); }
+  .site-nav { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .site-nav a { font-family:'Courier Prime',monospace; font-size:0.75rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); text-decoration:none; padding:6px 12px; border:1px solid transparent; transition:all 0.15s; white-space:nowrap; }
+  .site-nav a:hover, .site-nav a.active { color:var(--ink); border-color:var(--border); background:rgba(180,160,120,0.1); }
+  .lang-switch { display:flex; gap:0; margin-left:8px; }
+  .lang-btn { font-family:'Courier Prime',monospace; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 12px; border:1.5px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; text-decoration:none; transition:all 0.15s; }
+  .lang-btn:first-child { border-right:none; }
+  .lang-btn.active { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+  .lang-btn:not(.active):hover { background:var(--border); color:var(--ink); }
+  .main-wrapper { width:100%; max-width:860px; padding:48px 24px 32px; position:relative; z-index:1; }
+  .article-card { background:var(--paper); border:1px solid var(--border); box-shadow:4px 4px 0 var(--shadow),8px 8px 0 rgba(26,18,8,0.05); padding:40px 44px; margin-bottom:24px; position:relative; }
+  .article-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--accent); }
+  h1 { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--ink); margin-bottom:10px; line-height:1.2; }
+  .article-meta { font-size:0.8rem; color:var(--muted); margin-bottom:28px; padding-bottom:18px; border-bottom:1px dashed var(--border); }
+  h2 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h3 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--ink); margin:20px 0 8px; font-weight:700; }
+  p { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:12px; }
+  ul, ol { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:14px; padding-left:24px; }
+  li { margin-bottom:4px; }
+  code { background:rgba(180,160,120,0.18); padding:2px 6px; font-family:'Courier Prime',monospace; font-size:0.85rem; }
+  .callout { background:#fef9f0; border-left:4px solid var(--accent); padding:14px 18px; margin:18px 0; font-size:0.85rem; color:var(--muted); }
+  .site-footer { width:100%; background:var(--paper); border-top:1px solid var(--border); padding:24px; text-align:center; z-index:1; position:relative; }
+  .site-footer-inner { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center; }
+  .footer-links { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; }
+  .footer-links a { font-size:0.75rem; color:var(--muted); text-decoration:none; letter-spacing:0.05em; }
+  .footer-links a:hover { color:var(--accent); }
+  .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
+  @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType logo" role="img">
+        <rect fill="#1a1208" width="200" height="200" rx="4"/>
+        <rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/>
+        <rect fill="#b84a1a" x="8" y="8" width="184" height="7"/>
+        <rect fill="#fffdf7" x="38" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="142" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="38" y="90" width="124" height="20"/>
+        <rect fill="#b84a1a" x="142" y="132" width="20" height="20"/>
+      </svg>
+      <div class="site-logo-text">Human<span>Type</span></div>
+    </a>
+    <nav class="site-nav">
+      <a href="/">Tool</a>
+      <a href="/how-it-works.html">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog/ai-detectors-myths.html" class="active">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <span class="lang-switch">
+        <a href="/blog/ai-detectors-myths.html" class="lang-btn active">EN</a>
+        <a href="/ru/blog/ai-detectors-myths.html" class="lang-btn">RU</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div class="main-wrapper">
+  <article class="article-card">
+    <h1>How AI Detectors Work: Myths and Reality</h1>
+    <div class="article-meta">Published: May 2026 · Reading time: 6 min · Author: HumanType Team</div>
+
+    <h2>The rise of AI detection</h2>
+    <p>As AI-generated text floods the internet, universities, publishers, and platforms have deployed AI detection tools. These tools claim to identify whether a piece of text was written by a human or generated by a language model. But how accurate are they, really? And what signals do they actually use?</p>
+
+    <h2>Myth #1: AI detectors are 99% accurate</h2>
+    <p>Reality check: even the best AI detectors have significant error rates. Studies show that commercial AI detectors have false positive rates ranging from 5% to 15%, meaning they incorrectly flag human-written text as AI-generated. This is especially dangerous in academic settings, where false accusations can have serious consequences.</p>
+    <p>Detectors work on probabilities, not certainties. A 95% confidence score doesn't mean the text is 95% AI — it means the model is 95% confident in its prediction, which is a very different thing.</p>
+
+    <h2>Myth #2: AI detectors understand meaning</h2>
+    <p>AI detectors don't "understand" text the way humans do. They analyze statistical patterns: how predictable each word is given the previous words (perplexity), how much sentence structure varies (burstiness), and what typographic symbols are present. A text with low perplexity — meaning it's highly predictable — is more likely to be flagged as AI-generated, regardless of its actual content quality.</p>
+
+    <h2>Myth #3: Typographic symbols don't matter</h2>
+    <p>This is one of the most overlooked factors. AI detectors don't just look at words — they look at the actual Unicode characters. An em dash (—) is a different code point from a hyphen (-). Curly quotes (“ ”) differ from straight quotes ("). These differences create detectable patterns because most humans don't use these symbols in casual writing.</p>
+    <p>In one informal test, simply replacing typographic symbols in an AI-generated essay reduced the detection score by over 30%. When combined with other humanization techniques, the text became indistinguishable from human writing.</p>
+
+    <div class="callout">
+      <strong>HumanType's role:</strong> By replacing typographic symbols with plain ASCII equivalents, you remove one of the clearest signals that AI detectors use. It's not magic, but it's a scientifically sound first step.
+    </div>
+
+    <h2>What detectors actually measure</h2>
+    <ul>
+      <li><strong>Perplexity:</strong> How "surprised" a language model would be by each word. Human writing tends to have higher perplexity (more variation), while AI text is more predictable.</li>
+      <li><strong>Burstiness:</strong> The variation in sentence length and complexity. Humans tend to mix short and long sentences; AI often produces uniform sentence structures.</li>
+      <li><strong>Typographic fingerprints:</strong> The presence of specific Unicode characters strongly associated with AI training data.</li>
+      <li><strong>Statistical oddities:</strong> Unusual word frequency distributions, rare token usage, and other mathematical patterns.</li>
+    </ul>
+
+    <h2>The bottom line</h2>
+    <p>AI detectors are useful screening tools but not infallible judges. Reducing detection scores requires a multi-layered approach: normalizing typography, varying sentence structure, adding minor imperfections, and injecting genuine human voice. HumanType handles the typography layer — the rest is up to you.</p>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-links">
+      <a href="/">Tool</a>
+      <a href="/how-it-works.html">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog/ai-detectors-myths.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 HumanType – typographic symbols → plain human characters</div>
+  </div>
+</footer>
+
+</body>
+</html>

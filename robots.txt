@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://metalcalc.sherhn.space/sitemap.xml
+Sitemap: https://humantype.sherhn.space/sitemap.xml

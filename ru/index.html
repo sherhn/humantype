@@ -66,7 +66,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 48px 24px;
+    padding: 0;
     position: relative;
   }
 
@@ -82,33 +82,84 @@
     z-index: 0;
   }
 
-  .container {
-    position: relative;
-    z-index: 1;
+  /* ── Site header (navigation) ── */
+  .site-header {
     width: 100%;
-    max-width: 860px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 4px var(--shadow);
   }
-
-  /* ── Lang switcher ── */
-  .lang-bar {
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 28px;
-    gap: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
-  .lang-btn {
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .site-logo .logo-svg { width: 36px; height: 36px; }
+  .site-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .site-logo-text span { color: var(--accent); }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .site-nav a {
     font-family: 'Courier Prime', monospace;
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 5px 14px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover,
+  .site-nav a.active {
+    color: var(--ink);
+    border-color: var(--border);
+    background: rgba(180,160,120,0.1);
+  }
+  .lang-switch {
+    display: flex;
+    gap: 0;
+    margin-left: 8px;
+  }
+  .lang-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
     border: 1.5px solid var(--border);
     background: transparent;
     color: var(--muted);
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
     transition: all 0.15s;
   }
   .lang-btn:first-child { border-right: none; }
@@ -122,8 +173,24 @@
     color: var(--ink);
   }
 
+  /* ── Content wrapper ── */
+  .main-wrapper {
+    width: 100%;
+    padding: 48px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 860px;
+  }
+
   /* ── Brand ── */
-  header { text-align: center; margin-bottom: 40px; }
+  header.page-brand { text-align: center; margin-bottom: 40px; }
 
   .brand {
     display: inline-flex;
@@ -132,7 +199,7 @@
     margin-bottom: 14px;
   }
 
-  .logo-svg { width: 52px; height: 52px; flex-shrink: 0; }
+  .brand .logo-svg { width: 52px; height: 52px; flex-shrink: 0; }
 
   .brand-name {
     font-family: 'Playfair Display', serif;
@@ -437,14 +504,83 @@
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  footer { margin-top: 40px; text-align: center; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
-
-  /* ── Highlight backdrop ── */
-  .textarea-wrap {
+  /* ── Rule explanations section ── */
+  .explanations {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    box-shadow: 4px 4px 0 var(--shadow), 8px 8px 0 rgba(26,18,8,0.05);
+    padding: 32px;
+    margin-bottom: 20px;
     position: relative;
   }
+  .explanations::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  .exp-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  .exp-group { margin-bottom: 22px; }
+  .exp-group h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .exp-group p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 4px;
+  }
+
+  /* ── Site footer ── */
+  .site-footer {
+    width: 100%;
+    background: var(--paper);
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+  }
+  .site-footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .footer-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Highlight backdrop ── */
+  .textarea-wrap { position: relative; }
   #input-backdrop {
     position: absolute;
     top: 0; left: 0;
@@ -475,18 +611,50 @@
     background: transparent;
     z-index: 1;
   }
+
+  @media (max-width: 640px) {
+    .site-header-inner { flex-direction: column; align-items: flex-start; }
+    .site-nav { margin-top: 4px; }
+    .main-wrapper { padding: 32px 16px 24px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Site navigation -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/ru/" class="site-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType логотип" role="img">
+        <rect fill="#1a1208" width="200" height="200" rx="4"/>
+        <rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/>
+        <rect fill="#b84a1a" x="8" y="8" width="184" height="7"/>
+        <rect fill="#fffdf7" x="38" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="142" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="38" y="90" width="124" height="20"/>
+        <rect fill="#b84a1a" x="142" y="132" width="20" height="20"/>
+      </svg>
+      <div class="site-logo-text">Human<span>Type</span></div>
+    </a>
+    <nav class="site-nav">
+      <a href="/ru/" class="active">Инструмент</a>
+      <a href="/ru/how-it-works.html">Как работает</a>
+      <a href="/ru/faq.html">FAQ</a>
+      <a href="/ru/blog/ai-detectors-myths.html">Блог</a>
+      <a href="/ru/about.html">О проекте</a>
+      <a href="/ru/contact.html">Контакты</a>
+      <span class="lang-switch">
+        <a href="/" class="lang-btn">EN</a>
+        <a href="/ru/" class="lang-btn active">RU</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div class="main-wrapper">
 <div class="container">
 
-  <!-- Language switcher -->
-  <div class="lang-bar">
-    <a class="lang-btn" href="../">EN</a>
-    <a class="lang-btn active" href="../ru/">RU</a>
-  </div>
-
-  <header>
+  <header class="page-brand">
     <div class="brand">
       <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType логотип" role="img">
         <rect fill="#1a1208" width="200" height="200" rx="4"/>
@@ -555,14 +723,52 @@
     </div>
   </div>
 
-  <footer>
-    &copy; 2026 <a href="https://humantype.sherhn.space/">HumanType</a> – типографические символы &rarr; человеческие аналоги
-    &nbsp;·&nbsp;
-    <a href="https://github.com/sherhn/humantype/blob/main/LICENSE" target="_blank" rel="noopener">Лицензия</a>
-  </footer>
+  <!-- Explanations section -->
+  <div class="explanations">
+    <div class="exp-heading">Почему эти замены важны</div>
+
+    <div class="exp-group">
+      <h3>Тире</h3>
+      <p>ИИ-модели обожают длинное тире (—). Люди редко его используют, предпочитая обычный дефис (-) или двойной дефис (--). Длинное тире — сильный сигнал для детекторов ИИ. Замена на короткое тире или дефис делает текст естественнее.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Многоточие</h3>
+      <p>Символ многоточия (…) — это единый глиф, который почти никто не вставляет вручную. Три отдельные точки (...) — вот как люди набирают многоточие, и именно это правило восстанавливает.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Кавычки и апостроф</h3>
+      <p>Фигурные кавычки (“ ” ‘ ’) и ёлочки (« ») — отличительная черта текстовых процессоров и ИИ-генераторов. При вставке в CMS, простой редактор или код они могут нарушить форматирование. Прямые кавычки (") и апострофы (') универсально совместимы.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Специальные пробелы</h3>
+      <p>Неразрывные пробелы (U+00A0), тонкие пробелы (U+2009) и волосяные пробелы (U+200A) невидимы глазу, но заметны алгоритмам. Преобразование в обычные пробелы удаляет скрытые отпечатки без потери читаемости.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Дроби, правовые знаки, стрелки</h3>
+      <p>Юникодные дроби (½, ¼, ¾), правовые символы (®, ™, ©) и типографские стрелки (→, ⇒, ←) — ещё один слой «улик» ИИ. Замена на текстовые аналоги убирает машинное форматирование и делает текст неотличимым от человеческого.</p>
+    </div>
+  </div>
+
+</div>
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-links">
+      <a href="/ru/">Инструмент</a>
+      <a href="/ru/how-it-works.html">Как работает</a>
+      <a href="/ru/faq.html">FAQ</a>
+      <a href="/ru/blog/ai-detectors-myths.html">Блог</a>
+      <a href="/ru/about.html">О проекте</a>
+      <a href="/ru/contact.html">Контакты</a>
+      <a href="/ru/privacy.html">Политика конфиденциальности</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 HumanType – типографические символы → человеческие аналоги</div>
+  </div>
+</footer>
 
 <script>
 const GROUPS = [
@@ -639,7 +845,6 @@ function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// ── Render ────────────────────────────────────────────────────────────────────
 function renderGroups() {
   const grid = document.getElementById('groups-grid');
   grid.innerHTML = '';
@@ -648,7 +853,6 @@ function renderGroups() {
     const box = document.createElement('div');
     box.className = 'group-box';
 
-    // Group header
     const hdr = document.createElement('div');
     hdr.className = 'group-header';
 
@@ -666,7 +870,6 @@ function renderGroups() {
     hdr.appendChild(gtitle);
     box.appendChild(hdr);
 
-    // Rules
     for (const rule of group.rules) {
       const row = document.createElement('div');
       row.className = 'rule-row';
@@ -679,7 +882,6 @@ function renderGroups() {
 
       const lbl = document.createElement('div');
       lbl.className = 'rule-label';
-      // label is [sym, arr, rep]
       const [sym, arr, rep] = rule.label;
       lbl.innerHTML = `<span class="sym">${esc(sym)}</span><span class="arr">${esc(arr)}</span><span class="rep">${esc(rep)}</span>`;
 
@@ -739,13 +941,11 @@ function selectAll(on) {
   refreshUI();
 }
 
-// ── Panel toggle ──────────────────────────────────────────────────────────────
 function toggleRules() {
   document.getElementById('rules-header').classList.toggle('open');
   document.getElementById('rules-body').classList.toggle('open');
 }
 
-// ── Count & replace ───────────────────────────────────────────────────────────
 function countEnabled(text) {
   let total = 0;
   for (const rule of ALL_RULES) {
@@ -817,7 +1017,6 @@ function showToast(msg) {
   toastTimer = setTimeout(() => t.classList.remove('show'), 2500);
 }
 
-
 function buildHighlightPattern() {
   const parts = [];
   for (const rule of ALL_RULES) {
@@ -868,7 +1067,6 @@ function escapeWithMarks(text, pattern) {
   return result;
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
 renderGroups();
 document.getElementById('input').addEventListener('input', () => { updateInputCount(); updateHighlight(); });
 document.getElementById('input').addEventListener('scroll', updateHighlight);

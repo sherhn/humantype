@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, initial-scale=1.0">
+<title>Политика конфиденциальности – HumanType</title>
+<meta name="description" content="Политика конфиденциальности сайта HumanType в соответствии с Федеральным законом № 152-ФЗ.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f5f0e8; --paper:#fffdf7; --ink:#1a1208; --accent:#b84a1a; --muted:#8a7a62; --border:#d4c9b0; --shadow:rgba(26,18,8,0.12); }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { font-size:15px; scroll-behavior:smooth; }
+  body { font-family:'Courier Prime',monospace; background:var(--bg); color:var(--ink); min-height:100vh; display:flex; flex-direction:column; align-items:center; position:relative; }
+  body::before { content:''; position:fixed; inset:0; background:repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(180,160,120,0.15) 27px,rgba(180,160,120,0.15) 28px); pointer-events:none; z-index:0; }
+  .site-header { width:100%; background:var(--paper); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; box-shadow:0 1px 4px var(--shadow); }
+  .site-header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; flex-wrap:wrap; gap:16px; }
+  .site-logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .site-logo .logo-svg { width:36px; height:36px; }
+  .site-logo-text { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
+  .site-logo-text span { color:var(--accent); }
+  .site-nav { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .site-nav a { font-family:'Courier Prime',monospace; font-size:0.75rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); text-decoration:none; padding:6px 12px; border:1px solid transparent; transition:all 0.15s; white-space:nowrap; }
+  .site-nav a:hover, .site-nav a.active { color:var(--ink); border-color:var(--border); background:rgba(180,160,120,0.1); }
+  .lang-switch { display:flex; gap:0; margin-left:8px; }
+  .lang-btn { font-family:'Courier Prime',monospace; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 12px; border:1.5px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; text-decoration:none; transition:all 0.15s; }
+  .lang-btn:first-child { border-right:none; }
+  .lang-btn.active { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+  .lang-btn:not(.active):hover { background:var(--border); color:var(--ink); }
+  .page { max-width:860px; margin:0 auto; padding:36px 16px 80px; position:relative; z-index:1; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
+  .doc-card { background:var(--paper); border:1px solid var(--border); box-shadow:4px 4px 0 var(--shadow),8px 8px 0 rgba(26,18,8,0.05); padding:40px 44px; position:relative; }
+  .doc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--accent); }
+  .doc-eyebrow { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin-bottom:8px; }
+  .doc-title { font-size:1.45rem; font-weight:700; color:var(--ink); letter-spacing:-.02em; line-height:1.25; margin-bottom:6px; }
+  .doc-meta { font-size:.75rem; color:var(--muted); margin-bottom:32px; padding-bottom:24px; border-bottom:1px dashed var(--border); }
+  .toc { background:var(--bg); border:1px solid var(--border); padding:16px 18px; margin-bottom:32px; }
+  .toc-title { font-size:.68rem; text-transform:uppercase; letter-spacing:.09em; color:var(--muted); font-weight:500; margin-bottom:10px; }
+  .toc ol { padding-left:18px; display:flex; flex-direction:column; gap:5px; }
+  .toc li { font-size:.8rem; }
+  .toc a { color:var(--accent); text-decoration:none; }
+  .doc-section { margin-bottom:32px; }
+  .sec-title { font-size:.95rem; font-weight:700; color:var(--ink); margin-bottom:12px; padding-top:4px; display:flex; gap:10px; align-items:baseline; }
+  .sec-num { font-family:'Courier Prime',monospace; font-size:.75rem; color:var(--muted); flex-shrink:0; }
+  p { font-size:.88rem; color:#3a3a38; line-height:1.75; margin-bottom:10px; }
+  .doc-section ul, .doc-section ol { font-size:.88rem; color:#3a3a38; line-height:1.75; padding-left:20px; margin-bottom:10px; display:flex; flex-direction:column; gap:4px; }
+  .doc-divider { height:1px; background:var(--border); margin:28px 0; }
+  .highlight-box { background:#eff6ff; border:1px solid #bfdbfe; padding:14px 16px; margin:14px 0; font-size:.82rem; color:#1e40af; line-height:1.65; }
+  a { color:var(--accent); text-decoration:none; }
+  .contact-block { background:var(--bg); border:1px solid var(--border); padding:16px 18px; font-size:.82rem; color:var(--muted); line-height:1.7; margin-top:12px; }
+  .contact-block strong { color:var(--ink); display:block; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; margin-bottom:6px; }
+  .doc-footer { margin-top:28px; padding-top:20px; border-top:1px solid var(--border); font-size:.72rem; color:var(--muted); text-align:center; }
+  @media (max-width:600px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .doc-card { padding:24px 20px; } }
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/ru/" class="site-logo">
+      <svg class="logo-svg" viewBox="0 0 200 200"><rect fill="#1a1208" width="200" height="200" rx="4"/><rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/><rect fill="#b84a1a" x="8" y="8" width="184" height="7"/><rect fill="#fffdf7" x="38" y="48" width="20" height="104"/><rect fill="#fffdf7" x="142" y="48" width="20" height="104"/><rect fill="#fffdf7" x="38" y="90" width="124" height="20"/><rect fill="#b84a1a" x="142" y="132" width="20" height="20"/></svg>
+      <div class="site-logo-text">Human<span>Type</span></div>
+    </a>
+    <nav class="site-nav">
+      <a href="/ru/">Инструмент</a> <a href="/ru/how-it-works.html">Как работает</a> <a href="/ru/faq.html">FAQ</a> <a href="/ru/blog/ai-detectors-myths.html">Блог</a> <a href="/ru/about.html">О проекте</a> <a href="/ru/contact.html">Контакты</a>
+      <span class="lang-switch"><a href="/privacy.html" class="lang-btn">EN</a><a href="/ru/privacy.html" class="lang-btn active">RU</a></span>
+    </nav>
+  </div>
+</header>
+<main class="page">
+  <nav class="breadcrumb"><a href="/ru/">HumanType</a><span class="breadcrumb-sep">›</span><span>Политика конфиденциальности</span></nav>
+  <article class="doc-card">
+    <p class="doc-eyebrow">Правовой документ</p>
+    <h1 class="doc-title">Политика конфиденциальности</h1>
+    <p class="doc-meta">Редакция от&nbsp;1&nbsp;мая 2026&nbsp;г.&nbsp;·&nbsp;Действует для сайта <strong>humantype.sherhn.space</strong></p>
+    <nav class="toc">
+      <div class="toc-title">Содержание</div>
+      <ol>
+        <li><a href="#s1">Общие положения</a></li>
+        <li><a href="#s2">Оператор персональных данных</a></li>
+        <li><a href="#s3">Категории обрабатываемых данных</a></li>
+        <li><a href="#s4">Цели и правовое основание обработки</a></li>
+        <li><a href="#s5">Принципы обработки данных</a></li>
+        <li><a href="#s6">Права субъекта персональных данных</a></li>
+        <li><a href="#s7">Защита данных</a></li>
+        <li><a href="#s8">Изменения политики</a></li>
+        <li><a href="#s9">Контактные данные</a></li>
+      </ol>
+    </nav>
+    <div class="doc-section" id="s1">
+      <h2 class="sec-title"><span class="sec-num">1.</span> Общие положения</h2>
+      <p>Настоящая Политика конфиденциальности устанавливает порядок обработки персональных данных на сайте <strong>humantype.sherhn.space</strong> и разработана в соответствии с требованиями Федерального закона от&nbsp;27.07.2006&nbsp;№&nbsp;152-ФЗ «О персональных данных».</p>
+      <p>Сайт представляет собой бесплатный онлайн-инструмент для замены типографских символов ИИ на человеческие аналоги. Сайт не требует регистрации, не собирает и не хранит пользовательские данные на сервере. Вся обработка текста происходит локально в браузере пользователя.</p>
+      <div class="highlight-box">HumanType работает полностью в браузере. Никакие пользовательские данные не передаются на сервер. Мы не используем файлы cookie, не применяем аналитику и не размещаем рекламу.</div>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s2">
+      <h2 class="sec-title"><span class="sec-num">2.</span> Оператор персональных данных</h2>
+      <p>В рамках функционирования Сайта обработка персональных данных не осуществляется. Контактное лицо:</p>
+      <div class="contact-block"><strong>Контакты</strong>Электронная почта: <strong>sherhn.inc@gmail.com</strong></div>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s3">
+      <h2 class="sec-title"><span class="sec-num">3.</span> Категории обрабатываемых данных</h2>
+      <p>Сайт не собирает, не хранит и не обрабатывает какие-либо персональные данные. Текст, вставляемый пользователем в поле ввода, обрабатывается исключительно в браузере с помощью JavaScript и не передаётся на сервер.</p>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s4">
+      <h2 class="sec-title"><span class="sec-num">4.</span> Цели обработки</h2>
+      <p>Единственная цель функционирования Сайта — предоставление инструмента типографской нормализации текста. Никакие данные не используются в маркетинговых, аналитических или иных целях.</p>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s5">
+      <h2 class="sec-title"><span class="sec-num">5.</span> Принципы обработки данных</h2>
+      <p>Сайт функционирует на принципах локальной обработки (client-side only). Все вычисления выполняются исключительно в браузере пользователя. Сервер предоставляет только статические файлы (HTML, CSS, JS) и не выполняет серверный код.</p>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s6">
+      <h2 class="sec-title"><span class="sec-num">6.</span> Права субъекта данных</h2>
+      <p>Поскольку Сайт не обрабатывает персональные данные, права субъекта, предусмотренные главой 3&nbsp;152-ФЗ, реализуются через отсутствие сбора данных. По любым вопросам обращайтесь по контактам в разделе&nbsp;9.</p>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s7">
+      <h2 class="sec-title"><span class="sec-num">7.</span> Защита данных</h2>
+      <p>Передача данных между браузером и серверами GitHub Pages осуществляется по протоколу HTTPS. Сайт не хранит пользовательские данные, что исключает риск их утечки.</p>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s8">
+      <h2 class="sec-title"><span class="sec-num">8.</span> Изменения политики</h2>
+      <p>Оператор вправе вносить изменения в настоящую Политику. Новая редакция вступает в силу с момента размещения на Сайте.</p>
+    </div>
+    <div class="doc-divider"></div>
+    <div class="doc-section" id="s9">
+      <h2 class="sec-title"><span class="sec-num">9.</span> Контактные данные</h2>
+      <div class="contact-block"><strong>Контакты</strong>Электронная почта: <strong>sherhn.inc@gmail.com</strong></div>
+    </div>
+    <div class="doc-footer">© 2026 HumanType. Все права защищены.&nbsp;&nbsp;·&nbsp;&nbsp;<a href="/ru/">Вернуться к инструменту</a></div>
+  </article>
+</main>
+</body>
+</html>

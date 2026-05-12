@@ -66,7 +66,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 48px 24px;
+    padding: 0;
     position: relative;
   }
 
@@ -82,33 +82,84 @@
     z-index: 0;
   }
 
-  .container {
-    position: relative;
-    z-index: 1;
+  /* ── Site header (navigation) ── */
+  .site-header {
     width: 100%;
-    max-width: 860px;
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    box-shadow: 0 1px 4px var(--shadow);
   }
-
-  /* ── Lang switcher ── */
-  .lang-bar {
+  .site-header-inner {
+    max-width: 1100px;
+    margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: 28px;
-    gap: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    flex-wrap: wrap;
+    gap: 16px;
   }
-  .lang-btn {
+  .site-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .site-logo .logo-svg { width: 36px; height: 36px; }
+  .site-logo-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .site-logo-text span { color: var(--accent); }
+  .site-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .site-nav a {
     font-family: 'Courier Prime', monospace;
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
-    padding: 5px 14px;
+    color: var(--muted);
+    text-decoration: none;
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .site-nav a:hover,
+  .site-nav a.active {
+    color: var(--ink);
+    border-color: var(--border);
+    background: rgba(180,160,120,0.1);
+  }
+  .lang-switch {
+    display: flex;
+    gap: 0;
+    margin-left: 8px;
+  }
+  .lang-btn {
+    font-family: 'Courier Prime', monospace;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 12px;
     border: 1.5px solid var(--border);
     background: transparent;
     color: var(--muted);
     cursor: pointer;
     text-decoration: none;
-    display: inline-block;
     transition: all 0.15s;
   }
   .lang-btn:first-child { border-right: none; }
@@ -122,8 +173,24 @@
     color: var(--ink);
   }
 
+  /* ── Content wrapper ── */
+  .main-wrapper {
+    width: 100%;
+    padding: 48px 24px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 860px;
+  }
+
   /* ── Brand ── */
-  header { text-align: center; margin-bottom: 40px; }
+  header.page-brand { text-align: center; margin-bottom: 40px; }
 
   .brand {
     display: inline-flex;
@@ -132,7 +199,7 @@
     margin-bottom: 14px;
   }
 
-  .logo-svg { width: 52px; height: 52px; flex-shrink: 0; }
+  .brand .logo-svg { width: 52px; height: 52px; flex-shrink: 0; }
 
   .brand-name {
     font-family: 'Playfair Display', serif;
@@ -437,14 +504,83 @@
   }
   .toast.show { transform: translateX(-50%) translateY(0); }
 
-  footer { margin-top: 40px; text-align: center; font-size: 0.75rem; color: var(--muted); letter-spacing: 0.05em; }
-  footer a { color: var(--muted); text-decoration: none; }
-  footer a:hover { color: var(--accent); }
-
-  /* ── Highlight backdrop ── */
-  .textarea-wrap {
+  /* ── Rule explanations section ── */
+  .explanations {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    box-shadow: 4px 4px 0 var(--shadow), 8px 8px 0 rgba(26,18,8,0.05);
+    padding: 32px;
+    margin-bottom: 20px;
     position: relative;
   }
+  .explanations::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--accent);
+  }
+  .exp-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--ink);
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+  .exp-group { margin-bottom: 22px; }
+  .exp-group h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--accent);
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+  .exp-group p {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 4px;
+  }
+
+  /* ── Site footer ── */
+  .site-footer {
+    width: 100%;
+    background: var(--paper);
+    border-top: 1px solid var(--border);
+    padding: 24px;
+    text-align: center;
+    z-index: 1;
+    position: relative;
+  }
+  .site-footer-inner {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+  }
+  .footer-links {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .footer-links a {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.05em;
+  }
+  .footer-links a:hover { color: var(--accent); }
+  .footer-copy {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── Highlight backdrop ── */
+  .textarea-wrap { position: relative; }
   #input-backdrop {
     position: absolute;
     top: 0; left: 0;
@@ -475,18 +611,50 @@
     background: transparent;
     z-index: 1;
   }
+
+  @media (max-width: 640px) {
+    .site-header-inner { flex-direction: column; align-items: flex-start; }
+    .site-nav { margin-top: 4px; }
+    .main-wrapper { padding: 32px 16px 24px; }
+  }
 </style>
 </head>
 <body>
+
+<!-- Site navigation -->
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/" class="site-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType logo" role="img">
+        <rect fill="#1a1208" width="200" height="200" rx="4"/>
+        <rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/>
+        <rect fill="#b84a1a" x="8" y="8" width="184" height="7"/>
+        <rect fill="#fffdf7" x="38" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="142" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="38" y="90" width="124" height="20"/>
+        <rect fill="#b84a1a" x="142" y="132" width="20" height="20"/>
+      </svg>
+      <div class="site-logo-text">Human<span>Type</span></div>
+    </a>
+    <nav class="site-nav">
+      <a href="/" class="active">Tool</a>
+      <a href="/how-it-works.html">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog/ai-detectors-myths.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <span class="lang-switch">
+        <a href="/" class="lang-btn active">EN</a>
+        <a href="/ru/" class="lang-btn">RU</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div class="main-wrapper">
 <div class="container">
 
-  <!-- Language switcher -->
-  <div class="lang-bar">
-    <a class="lang-btn active" href="../">EN</a>
-    <a class="lang-btn" href="../ru/">RU</a>
-  </div>
-
-  <header>
+  <header class="page-brand">
     <div class="brand">
       <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType logo" role="img">
         <rect fill="#1a1208" width="200" height="200" rx="4"/>
@@ -555,14 +723,52 @@
     </div>
   </div>
 
-  <footer>
-    &copy; 2026 <a href="https://humantype.sherhn.space/">HumanType</a> – typographic symbols → plain human characters
-    &nbsp;·&nbsp;
-    <a href="https://github.com/sherhn/humantype/blob/main/LICENSE" target="_blank" rel="noopener">License</a>
-  </footer>
+  <!-- Explanations section -->
+  <div class="explanations">
+    <div class="exp-heading">Why these replacements matter</div>
+
+    <div class="exp-group">
+      <h3>Dashes</h3>
+      <p>AI models love the em dash (—). Humans rarely type it, defaulting to a simple hyphen (-) or a double hyphen (--). Em dashes are a strong signal for AI detectors. Replacing them with a regular hyphen or en dash makes the text appear more natural.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Ellipsis</h3>
+      <p>The Unicode ellipsis character (…) is a single glyph that most people never insert manually. Three separate dots (...) is how humans type an ellipsis, and that's exactly what this rule enforces.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Quotes and apostrophe</h3>
+      <p>Curly quotes (“ ” ‘ ’) and guillemets (« ») are hallmarks of word processors and AI text generators. When pasted into a CMS, plain text editor, or code, they can break formatting. Straight quotes (") and apostrophes (') are universally compatible.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Special spaces</h3>
+      <p>Non-breaking spaces (U+00A0), thin spaces (U+2009), and hair spaces (U+200A) are invisible to the naked eye but stand out to AI detectors. Converting them to regular spaces removes hidden fingerprints without affecting readability.</p>
+    </div>
+    <div class="exp-group">
+      <h3>Fractions, legal symbols, arrows</h3>
+      <p>Unicode fractions (½, ¼, ¾), legal symbols (®, ™, ©), and typographic arrows (→, ⇒, ←) are another layer of AI "tells." Replacing them with plain-text equivalents strips away machine-specific formatting and makes your text indistinguishable from human typing.</p>
+    </div>
+  </div>
+
+</div>
 </div>
 
 <div class="toast" id="toast"></div>
+
+<!-- Site footer -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-links">
+      <a href="/">Tool</a>
+      <a href="/how-it-works.html">How It Works</a>
+      <a href="/faq.html">FAQ</a>
+      <a href="/blog/ai-detectors-myths.html">Blog</a>
+      <a href="/about.html">About</a>
+      <a href="/contact.html">Contact</a>
+      <a href="/privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 HumanType – typographic symbols → plain human characters</div>
+  </div>
+</footer>
 
 <script>
 const GROUPS = [
@@ -581,7 +787,7 @@ const GROUPS = [
     ]
   },
   {
-    id: 'quotes', title: 'Quotes and apostrophe',
+    id: 'quotes', title: 'Quotes and Apostrophe',
     rules: [
       { id: 'apos',      label: ['\u2018 \u2019', '→', "' straight"], fn: t => re(t, /[\u2018\u2019]/g, "'") },
       { id: 'guillemets',label: ['« »',            '→', '" straight'], fn: t => re(t, /[\u00AB\u00BB]/g, '"') },
@@ -589,7 +795,7 @@ const GROUPS = [
     ]
   },
   {
-    id: 'spaces', title: 'Special spaces',
+    id: 'spaces', title: 'Special Spaces',
     rules: [
       { id: 'nbsp', label: ['NBSP U+00A0', '→', 'space'], fn: t => re(t, /\u00A0/g, ' ') },
       { id: 'thin', label: ['thin U+2009','→', 'space'], fn: t => re(t, /\u2009/g, ' ') },
@@ -597,7 +803,7 @@ const GROUPS = [
     ]
   },
   {
-    id: 'fractions', title: 'Fractions and math',
+    id: 'fractions', title: 'Fractions & Math',
     rules: [
       { id: 'half',         label: ['½', '→', '1/2'], fn: t => re(t, /½/g, '1/2') },
       { id: 'quarter',      label: ['¼', '→', '1/4'], fn: t => re(t, /¼/g, '1/4') },
@@ -606,7 +812,7 @@ const GROUPS = [
     ]
   },
   {
-    id: 'legal', title: 'Legal symbols',
+    id: 'legal', title: 'Legal Symbols',
     rules: [
       { id: 'reg',    label: ['®',   '→', '(R)'],  fn: t => re(t, /®/g,    '(R)')  },
       { id: 'tm',     label: ['™',   '→', '(TM)'], fn: t => re(t, /™/g,    '(TM)') },
@@ -639,7 +845,6 @@ function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
-// ── Render ────────────────────────────────────────────────────────────────────
 function renderGroups() {
   const grid = document.getElementById('groups-grid');
   grid.innerHTML = '';
@@ -648,7 +853,6 @@ function renderGroups() {
     const box = document.createElement('div');
     box.className = 'group-box';
 
-    // Group header
     const hdr = document.createElement('div');
     hdr.className = 'group-header';
 
@@ -666,7 +870,6 @@ function renderGroups() {
     hdr.appendChild(gtitle);
     box.appendChild(hdr);
 
-    // Rules
     for (const rule of group.rules) {
       const row = document.createElement('div');
       row.className = 'rule-row';
@@ -679,7 +882,6 @@ function renderGroups() {
 
       const lbl = document.createElement('div');
       lbl.className = 'rule-label';
-      // label is [sym, arr, rep]
       const [sym, arr, rep] = rule.label;
       lbl.innerHTML = `<span class="sym">${esc(sym)}</span><span class="arr">${esc(arr)}</span><span class="rep">${esc(rep)}</span>`;
 
@@ -739,13 +941,11 @@ function selectAll(on) {
   refreshUI();
 }
 
-// ── Panel toggle ──────────────────────────────────────────────────────────────
 function toggleRules() {
   document.getElementById('rules-header').classList.toggle('open');
   document.getElementById('rules-body').classList.toggle('open');
 }
 
-// ── Count & replace ───────────────────────────────────────────────────────────
 function countEnabled(text) {
   let total = 0;
   for (const rule of ALL_RULES) {
@@ -818,17 +1018,9 @@ function showToast(msg) {
 }
 
 function buildHighlightPattern() {
-  const patterns = [];
-  for (const rule of ALL_RULES) {
-    if (!enabled[rule.id]) continue;
-    // Extract the regex source from the rule function by running it on a dummy
-    // Instead, rebuild from GROUPS directly
-  }
-  // Collect all active regexes
   const parts = [];
   for (const rule of ALL_RULES) {
     if (!enabled[rule.id]) continue;
-    // Get the regex by checking what the fn uses – we'll extract via toString
     const src = rule.fn.toString();
     const m = src.match(/re\(t,\s*(\/[^/]+\/[gim]*)/);
     if (m) parts.push(m[1]);
@@ -847,12 +1039,9 @@ function updateHighlight() {
   if (!backdrop) return;
   const ta = document.getElementById('input');
   const text = ta.value;
-
-  // Sync height so backdrop matches textarea
   backdrop.style.height = ta.offsetHeight + 'px';
   backdrop.style.overflowY = 'auto';
   backdrop.scrollTop = ta.scrollTop;
-
   const pattern = buildHighlightPattern();
   if (!pattern || !text) {
     backdrop.innerHTML = esc(text) + '\n';
@@ -872,13 +1061,12 @@ function escapeWithMarks(text, pattern) {
     result += esc(text.slice(lastIndex, m.index));
     result += `<mark>${esc(m[0])}</mark>`;
     lastIndex = m.index + m[0].length;
-    if (m[0].length === 0) { pattern.lastIndex++; } // avoid infinite loop
+    if (m[0].length === 0) { pattern.lastIndex++; }
   }
   result += esc(text.slice(lastIndex));
   return result;
 }
 
-// ── Init ──────────────────────────────────────────────────────────────────────
 renderGroups();
 document.getElementById('input').addEventListener('input', () => { updateInputCount(); updateHighlight(); });
 document.getElementById('input').addEventListener('scroll', updateHighlight);
