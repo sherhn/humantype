@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact HumanType</title>
-<meta name="description" content="Get in touch with the HumanType team. Questions, feedback, or collaboration inquiries.">
+<title>О проекте HumanType – команда и миссия</title>
+<meta name="description" content="Узнайте о проекте HumanType, нашей миссии помогать авторам обходить детекторы ИИ через типографскую нормализацию и приверженности открытому коду.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://humantype.sherhn.space/contact.html">
-<link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/contact.html">
-<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/contact.html">
+<link rel="canonical" href="https://humantype.sherhn.space/ru/about.html">
+<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/about.html">
+<link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/about.html">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
@@ -30,12 +30,11 @@
   .lang-btn:first-child { border-right:none; }
   .lang-btn.active { background:var(--ink); color:var(--bg); border-color:var(--ink); }
   .lang-btn:not(.active):hover { background:var(--border); color:var(--ink); }
-  .main-wrapper { width:100%; max-width:860px; padding:48px 24px 32px; position:relative; z-index:1; }
+  .main-wrapper { width:100%; max-width:860px; padding:48px 24px 32px; position:relative; z-index:1; flex:1; }
   .article-card { background:var(--paper); border:1px solid var(--border); box-shadow:4px 4px 0 var(--shadow),8px 8px 0 rgba(26,18,8,0.05); padding:40px 44px; margin-bottom:24px; position:relative; }
   .article-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--accent); }
   h1 { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--ink); margin-bottom:18px; }
   p { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:12px; }
-  a { color:var(--accent); }
   .site-footer { width:100%; background:var(--paper); border-top:1px solid var(--border); padding:24px; text-align:center; z-index:1; position:relative; }
   .site-footer-inner { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center; }
   .footer-links { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; }
@@ -48,27 +47,28 @@
 <body>
 <header class="site-header">
   <div class="site-header-inner">
-    <a href="/" class="site-logo">
+    <a href="/ru/" class="site-logo">
       <svg class="logo-svg" viewBox="0 0 200 200"><rect fill="#1a1208" width="200" height="200" rx="4"/><rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/><rect fill="#b84a1a" x="8" y="8" width="184" height="7"/><rect fill="#fffdf7" x="38" y="48" width="20" height="104"/><rect fill="#fffdf7" x="142" y="48" width="20" height="104"/><rect fill="#fffdf7" x="38" y="90" width="124" height="20"/><rect fill="#b84a1a" x="142" y="132" width="20" height="20"/></svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
     <nav class="site-nav">
-      <a href="/">Tool</a> <a href="/how-it-works.html">How It Works</a> <a href="/faq.html">FAQ</a> <a href="/blog/ai-detectors-myths.html">Blog</a> <a href="/about.html">About</a> <a href="/contact.html" class="active">Contact</a>
-      <span class="lang-switch"><a href="/contact.html" class="lang-btn active">EN</a><a href="/ru/contact.html" class="lang-btn">RU</a></span>
+      <a href="/ru/">Инструмент</a> <a href="/ru/how-it-works.html">Как работает</a> <a href="/ru/faq.html">FAQ</a> <a href="/ru/blog/ai-detectors-myths.html">Блог</a> <a href="/ru/about.html" class="active">О проекте</a> <a href="/ru/contact.html">Контакты</a>
+      <span class="lang-switch"><a href="/about.html" class="lang-btn">EN</a><a href="/ru/about.html" class="lang-btn active">RU</a></span>
     </nav>
   </div>
 </header>
 <div class="main-wrapper"><article class="article-card">
-  <h1>Contact Us</h1>
-  <p>We welcome your questions, feedback, and collaboration inquiries.</p>
-  <p><strong>Email:</strong> <a href="mailto:sherhn.inc@gmail.com">sherhn.inc@gmail.com</a></p>
-  <p><strong>GitHub:</strong> <a href="https://github.com/sherhn/humantype" target="_blank" rel="noopener">github.com/sherhn/humantype</a></p>
-  <p>We typically respond within 48 hours on business days. For urgent matters, please use email.</p>
+  <h1>О проекте HumanType</h1>
+  <p>HumanType родился из простого наблюдения: ИИ-сгенерированный текст несёт невидимые типографские отпечатки, которые делают его обнаруживаемым. Длинные тире, фигурные кавычки и юникодное многоточие — всё это улики, тонкие сигналы того, что текст написан машиной, а не человеком.</p>
+  <p>Наша миссия — дать авторам контроль над тем, как их текст воспринимается детекторами ИИ. Нормализуя типографские символы до простых ASCII-аналогов, HumanType убирает один из самых явных сигналов, на которые полагаются детекторы ИИ — и при этом сохраняет смысл и читаемость вашего контента.</p>
+  <p><strong>Открытый код и прозрачность.</strong> HumanType распространяется под лицензией MIT и полностью открыт. Весь исходный код доступен на GitHub. Мы убеждены, что инструменты для очеловечивания ИИ-текста должны быть прозрачными, проверяемыми и свободными от скрытых мотивов.</p>
+  <p><strong>Приватность прежде всего.</strong> HumanType работает полностью в вашем браузере. Никакой текст никогда не отправляется на сервер. Никакой аналитики. Никакого отслеживания. Никакого сбора данных. Всё, что вы вставляете, остаётся на вашем устройстве.</p>
+  <p><strong>Создано с заботой.</strong> HumanType поддерживается небольшой командой разработчиков и авторов, убеждённых, что технологии должны расширять возможности, а не разоблачать. Мы стремимся сохранять этот инструмент бесплатным, быстрым и эффективным.</p>
 </article></div>
 <footer class="site-footer">
   <div class="site-footer-inner">
     <div class="footer-links">
-      <a href="/">Tool</a> <a href="/how-it-works.html">How It Works</a> <a href="/faq.html">FAQ</a> <a href="/blog/ai-detectors-myths.html">Blog</a> <a href="/about.html">About</a> <a href="/contact.html">Contact</a> <a href="/privacy.html">Privacy Policy</a>
+      <a href="/ru/">Инструмент</a> <a href="/ru/how-it-works.html">Как работает</a> <a href="/ru/faq.html">FAQ</a> <a href="/ru/blog/ai-detectors-myths.html">Блог</a> <a href="/ru/about.html">О проекте</a> <a href="/ru/contact.html">Контакты</a> <a href="/ru/privacy.html">Политика конфиденциальности</a>
     </div>
     <div class="footer-copy">&copy; 2026 HumanType</div>
   </div>
