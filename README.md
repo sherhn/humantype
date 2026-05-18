@@ -25,7 +25,7 @@ AI-generated text is littered with typographic "tells": the em dash (—), curly
 ## File structure
 
 ```
-index.html       # Main application (single self-contained file)
+index       # Main application (single self-contained file)
 robots.txt       # Search engine crawler rules
 sitemap.xml      # XML sitemap for SEO
 humantype-logo.svg  # Standalone SVG logo
@@ -38,7 +38,7 @@ Upload all files to your web server root. The app is fully static — no backend
 
 ```bash
 # Example: deploy via rsync
-rsync -av index.html robots.txt sitemap.xml humantype-logo.svg user@yourserver:/var/www/humantype/
+rsync -av index robots.txt sitemap.xml humantype-logo.svg user@yourserver:/var/www/humantype/
 ```
 
 ## SEO
