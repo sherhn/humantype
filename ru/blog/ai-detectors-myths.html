@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Как работают детекторы ИИ: мифы и реальность – Блог HumanType</title>
+<meta name="description" content="Разберитесь, какие сигналы используют детекторы ИИ — от перплексии до типографских отпечатков. Развенчание мифов об обнаружении ИИ.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://humantype.sherhn.space/ru/blog/ai-detectors-myths.html">
+<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/blog/ai-detectors-myths.html">
+<link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/blog/ai-detectors-myths.html">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f5f0e8; --paper: #fffdf7; --ink: #1a1208; --accent: #b84a1a; --muted: #8a7a62; --border: #d4c9b0; --shadow: rgba(26,18,8,0.12);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--ink); font-family: 'Courier Prime', monospace;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; position: relative;
+  }
+  body::before {
+    content: ''; position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px);
+    pointer-events: none; z-index: 0;
+  }
+  .site-header { width:100%; background:var(--paper); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; box-shadow:0 1px 4px var(--shadow); }
+  .site-header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; flex-wrap:wrap; gap:16px; }
+  .site-logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .site-logo .logo-svg { width:36px; height:36px; }
+  .site-logo-text { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
+  .site-logo-text span { color:var(--accent); }
+  .site-nav { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .site-nav a { font-family:'Courier Prime',monospace; font-size:0.75rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); text-decoration:none; padding:6px 12px; border:1px solid transparent; transition:all 0.15s; white-space:nowrap; }
+  .site-nav a:hover, .site-nav a.active { color:var(--ink); border-color:var(--border); background:rgba(180,160,120,0.1); }
+  .lang-switch { display:flex; gap:0; margin-left:8px; }
+  .lang-btn { font-family:'Courier Prime',monospace; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 12px; border:1.5px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; text-decoration:none; transition:all 0.15s; }
+  .lang-btn:first-child { border-right:none; }
+  .lang-btn.active { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+  .lang-btn:not(.active):hover { background:var(--border); color:var(--ink); }
+  .main-wrapper { width:100%; max-width:860px; padding:48px 24px 32px; position:relative; z-index:1; flex:1; }
+  .article-card { background:var(--paper); border:1px solid var(--border); box-shadow:4px 4px 0 var(--shadow),8px 8px 0 rgba(26,18,8,0.05); padding:40px 44px; margin-bottom:24px; position:relative; }
+  .article-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--accent); }
+  h1 { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--ink); margin-bottom:10px; line-height:1.2; }
+  .article-meta { font-size:0.8rem; color:var(--muted); margin-bottom:28px; padding-bottom:18px; border-bottom:1px dashed var(--border); }
+  h2 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h3 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--ink); margin:20px 0 8px; font-weight:700; }
+  p { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:12px; }
+  ul, ol { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:14px; padding-left:24px; }
+  li { margin-bottom:4px; }
+  code { background:rgba(180,160,120,0.18); padding:2px 6px; font-family:'Courier Prime',monospace; font-size:0.85rem; }
+  .callout { background:#fef9f0; border-left:4px solid var(--accent); padding:14px 18px; margin:18px 0; font-size:0.85rem; color:var(--muted); }
+  .site-footer { width:100%; background:var(--paper); border-top:1px solid var(--border); padding:24px; text-align:center; z-index:1; position:relative; }
+  .site-footer-inner { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center; }
+  .footer-links { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; }
+  .footer-links a { font-size:0.75rem; color:var(--muted); text-decoration:none; letter-spacing:0.05em; }
+  .footer-links a:hover { color:var(--accent); }
+  .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
+  @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+</style>
+<!-- Yandex Autoplacement 19264475 -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+<script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="site-header-inner">
+    <a href="/ru/" class="site-logo">
+      <svg class="logo-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" aria-label="HumanType логотип" role="img">
+        <rect fill="#1a1208" width="200" height="200" rx="4"/>
+        <rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/>
+        <rect fill="#b84a1a" x="8" y="8" width="184" height="7"/>
+        <rect fill="#fffdf7" x="38" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="142" y="48" width="20" height="104"/>
+        <rect fill="#fffdf7" x="38" y="90" width="124" height="20"/>
+        <rect fill="#b84a1a" x="142" y="132" width="20" height="20"/>
+      </svg>
+      <div class="site-logo-text">Human<span>Type</span></div>
+    </a>
+    <nav class="site-nav">
+      <a href="/ru/">Инструмент</a>
+      <a href="/ru/how-it-works.html">Как работает</a>
+      <a href="/ru/faq.html">FAQ</a>
+      <a href="/ru/blog/ai-detectors-myths.html" class="active">Блог</a>
+      <a href="/ru/about.html">О проекте</a>
+      <a href="/ru/contact.html">Контакты</a>
+      <span class="lang-switch">
+        <a href="/blog/ai-detectors-myths.html" class="lang-btn">EN</a>
+        <a href="/ru/blog/ai-detectors-myths.html" class="lang-btn active">RU</a>
+      </span>
+    </nav>
+  </div>
+</header>
+
+<div class="main-wrapper">
+  <article class="article-card">
+    <h1>Как работают детекторы ИИ: мифы и реальность</h1>
+    <div class="article-meta">Опубликовано: май 2026 · Время чтения: 6 мин · Автор: Команда HumanType</div>
+
+    <h2>Рост детекторов ИИ</h2>
+    <p>По мере того как ИИ-тексты заполняют интернет, университеты, издательства и платформы внедряют инструменты обнаружения ИИ. Эти сервисы утверждают, что могут определить, написан ли текст человеком или сгенерирован языковой моделью. Но насколько они точны на самом деле? И какие сигналы они действительно используют?</p>
+
+    <h2>Миф №1: Детекторы ИИ точны на 99%</h2>
+    <p>Реальность: даже лучшие детекторы имеют значительную погрешность. Исследования показывают, что коммерческие детекторы ИИ имеют уровень ложноположительных срабатываний от 5% до 15% — то есть они неверно помечают человеческий текст как ИИ-сгенерированный. Это особенно опасно в академической среде, где ложные обвинения могут иметь серьёзные последствия.</p>
+    <p>Детекторы работают на вероятностях, а не на достоверностях. Оценка 95% не означает, что текст на 95% создан ИИ — это значит, что модель на 95% уверена в своём прогнозе, а это совсем разные вещи.</p>
+
+    <h2>Миф №2: Детекторы ИИ понимают смысл</h2>
+    <p>Детекторы ИИ не «понимают» текст так, как человек. Они анализируют статистические паттерны: насколько предсказуемо каждое слово с учётом предыдущих (перплексия), насколько варьируется структура предложений (взрывчатость) и какие типографские символы присутствуют. Текст с низкой перплексией — то есть высокопредсказуемый — с большей вероятностью будет отмечен как ИИ-сгенерированный, независимо от качества содержания.</p>
+
+    <h2>Миф №3: Типографские символы не имеют значения</h2>
+    <p>Это один из самых недооценённых факторов. Детекторы ИИ смотрят не только на слова — они анализируют конкретные коды символов Юникода. Длинное тире (—) и дефис (-) имеют разные коды. Фигурные кавычки (“ ”) отличаются от прямых ("). Эти различия создают обнаруживаемые паттерны, потому что большинство людей не используют эти символы в обычной печати.</p>
+    <p>В одном неформальном тесте простая замена типографских символов в ИИ-сгенерированном эссе снизила оценку обнаружения более чем на 30%. В сочетании с другими методами очеловечивания текст становился неотличимым от человеческого.</p>
+
+    <div class="callout">
+      <strong>Роль HumanType:</strong> Заменяя типографские символы на простые ASCII-аналоги, вы убираете один из самых явных сигналов, используемых детекторами ИИ. Это не магия, но научно обоснованный первый шаг.
+    </div>
+
+    <h2>Что на самом деле измеряют детекторы</h2>
+    <ul>
+      <li><strong>Перплексия:</strong> Насколько «удивлена» была бы языковая модель каждым словом. Человеческий текст обычно имеет более высокую перплексию (больше вариаций), в то время как ИИ-текст более предсказуем.</li>
+      <li><strong>Взрывчатость:</strong> Вариативность длины и сложности предложений. Люди склонны смешивать короткие и длинные предложения; ИИ часто выдаёт однородные структуры.</li>
+      <li><strong>Типографские отпечатки:</strong> Наличие специфических символов Юникода, тесно связанных с обучающими данными ИИ.</li>
+      <li><strong>Статистические аномалии:</strong> Необычные распределения частотности слов, использование редких токенов и другие математические паттерны.</li>
+    </ul>
+
+    <h2>Итог</h2>
+    <p>Детекторы ИИ — полезные инструменты для скрининга, но не непогрешимые судьи. Снижение оценки обнаружения требует многоуровневого подхода: нормализации типографики, варьирования структуры предложений, добавления мелких несовершенств и внесения подлинного человеческого голоса. HumanType решает задачу типографического слоя — остальное зависит от вас.</p>
+  </article>
+</div>
+
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="footer-links">
+      <a href="/ru/">Инструмент</a>
+      <a href="/ru/how-it-works.html">Как работает</a>
+      <a href="/ru/faq.html">FAQ</a>
+      <a href="/ru/blog/ai-detectors-myths.html">Блог</a>
+      <a href="/ru/about.html">О проекте</a>
+      <a href="/ru/contact.html">Контакты</a>
+      <a href="/ru/privacy.html">Политика конфиденциальности</a>
+    </div>
+    <div class="footer-copy">&copy; 2026 HumanType – типографические символы → человеческие аналоги</div>
+  </div>
+</footer>
+
+</body>
+</html>
