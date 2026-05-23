@@ -7,9 +7,12 @@
 <meta name="description" content="Узнайте, что такое типографские символы, откуда они берутся в ИИ-тексте и как их замена помогает обойти детекторы ИИ. Полное руководство по HumanType.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/ru/how-it-works">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/how-it-works">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/how-it-works">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/how-it-works">
 <link rel="icon" type="image/svg+xml" href="https://humantype.sherhn.space/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -247,10 +250,64 @@
     .site-header-inner { flex-direction: column; align-items: flex-start; }
     .article-card { padding: 28px 20px; }
   }
+  .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
+  .cta-btn:hover { opacity:.85; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
 <!-- Yandex Autoplacement 19264475 -->
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 <script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/ru/how-it-works">
+<meta property="og:title" content="Как работает HumanType – скрыть типографику ИИ">
+<meta property="og:description" content="Узнайте, что такое типографские символы, откуда они берутся в ИИ-тексте и как их замена помогает обойти детекторы ИИ.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="ru_RU">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Как работает HumanType – скрыть типографику ИИ">
+<meta name="twitter:description" content="Узнайте, что такое типографские символы, откуда они берутся в ИИ-тексте и как их замена помогает обойти детекторы ИИ.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Как убрать типографические отпечатки ИИ с помощью HumanType",
+  "description": "Используйте HumanType для замены типографических символов ИИ на обычные ASCII-аналоги.",
+  "step": [
+    {"@type": "HowToStep", "name": "Вставьте текст", "text": "Скопируйте ваш ИИ-сгенерированный текст и вставьте его в поле ввода HumanType."},
+    {"@type": "HowToStep", "name": "Выберите правила замены", "text": "Выберите категории типографических символов для замены — тире, кавычки, многоточие, пробелы и другие."},
+    {"@type": "HowToStep", "name": "Нажмите Заменить", "text": "Нажмите кнопку замены. HumanType обрабатывает всё локально в браузере."},
+    {"@type": "HowToStep", "name": "Скопируйте результат", "text": "Скопируйте нормализованный текст и используйте его там, где нужно."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Как работает",
+      "item": "https://humantype.sherhn.space/ru/how-it-works"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -268,7 +325,7 @@
       </svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/ru/">Инструмент</a>
       <a href="/ru/how-it-works" class="active">Как работает</a>
       <a href="/ru/faq">FAQ</a>
@@ -284,9 +341,10 @@
 </header>
 
 <div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>Как работает</span></nav>
   <article class="article-card">
     <h1>Как работает HumanType: полное руководство</h1>
-    <div class="article-meta">Обновлено: май 2026 · Время чтения: 7 мин</div>
+    <div class="article-meta">Обновлено: <time datetime="2026-05-11">май 2026</time> · Время чтения: 7 мин</div>
 
     <h2>Что такое типографские символы?</h2>
     <p>Типографские символы — это специальные знаки Юникода, выходящие за рамки базового ASCII. К ним относятся длинное тире (—), фигурные кавычки (“ ”), символ многоточия (…), неразрывные пробелы и десятки других. Эти символы созданы, чтобы текст выглядел профессионально в печати и вёрстке. Но в цифровой среде они могут стать проблемой.</p>
@@ -323,7 +381,9 @@
 
     <h2>Приватность и безопасность</h2>
     <p>HumanType работает полностью в вашем браузере. Никакой текст никогда не отправляется на сервер. JavaScript-код обрабатывает всё локально, поэтому ваш контент остаётся приватным и защищённым. Никакой аналитики, никакого отслеживания, никакого сбора данных.</p>
-  </article>
+  
+<div class="cta-box"><p>Готовы убрать типографические отпечатки ИИ? Попробуйте инструмент прямо сейчас — бесплатно, мгновенно, без регистрации.</p><a href="/ru/" class="cta-btn">Открыть HumanType →</a></div>
+</article>
 </div>
 
 <footer class="site-footer">

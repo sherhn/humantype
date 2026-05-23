@@ -7,9 +7,12 @@
 <meta name="description" content="Узнайте о проекте HumanType, нашей миссии помогать авторам обходить детекторы ИИ через типографскую нормализацию и приверженности открытому коду.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/ru/about">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/about">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/about">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/about">
 <link rel="icon" type="image/svg+xml" href="https://humantype.sherhn.space/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root { --bg:#f5f0e8; --paper:#fffdf7; --ink:#1a1208; --accent:#b84a1a; --muted:#8a7a62; --border:#d4c9b0; --shadow:rgba(26,18,8,0.12); }
@@ -42,7 +45,58 @@
   .footer-links a:hover { color:var(--accent); }
   .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
   @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+  .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
+  .cta-btn:hover { opacity:.85; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/ru/about">
+<meta property="og:title" content="О проекте HumanType – команда и миссия">
+<meta property="og:description" content="Узнайте о проекте HumanType, нашей миссии помогать авторам обходить детекторы ИИ через типографскую нормализацию.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="ru_RU">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="О проекте HumanType – команда и миссия">
+<meta name="twitter:description" content="Узнайте о проекте HumanType, нашей миссии помогать авторам обходить детекторы ИИ через типографскую нормализацию.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HumanType",
+  "url": "https://humantype.sherhn.space",
+  "description": "HumanType — бесплатный инструмент с открытым исходным кодом для замены типографических символов ИИ на обычные ASCII-аналоги.",
+  "email": "sherhn.inc@gmail.com",
+  "sameAs": ["https://github.com/sherhn/humantype"]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "О проекте",
+      "item": "https://humantype.sherhn.space/ru/about"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="site-header">
@@ -51,19 +105,30 @@
       <svg class="logo-svg" viewBox="0 0 200 200"><rect fill="#1a1208" width="200" height="200" rx="4"/><rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/><rect fill="#b84a1a" x="8" y="8" width="184" height="7"/><rect fill="#fffdf7" x="38" y="48" width="20" height="104"/><rect fill="#fffdf7" x="142" y="48" width="20" height="104"/><rect fill="#fffdf7" x="38" y="90" width="124" height="20"/><rect fill="#b84a1a" x="142" y="132" width="20" height="20"/></svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/ru/">Инструмент</a> <a href="/ru/how-it-works">Как работает</a> <a href="/ru/faq">FAQ</a> <a href="/ru/blog/ai-detectors-myths">Блог</a> <a href="/ru/about" class="active">О проекте</a> <a href="/ru/contact">Контакты</a>
       <span class="lang-switch"><a href="/about" class="lang-btn">EN</a><a href="/ru/about" class="lang-btn active">RU</a></span>
     </nav>
   </div>
 </header>
-<div class="main-wrapper"><article class="article-card">
+<div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>О проекте</span></nav>
+  <article class="article-card">
   <h1>О проекте HumanType</h1>
   <p>HumanType родился из простого наблюдения: ИИ-сгенерированный текст несёт невидимые типографские отпечатки, которые делают его обнаруживаемым. Длинные тире, фигурные кавычки и юникодное многоточие — всё это улики, тонкие сигналы того, что текст написан машиной, а не человеком.</p>
   <p>Наша миссия — дать авторам контроль над тем, как их текст воспринимается детекторами ИИ. Нормализуя типографские символы до простых ASCII-аналогов, HumanType убирает один из самых явных сигналов, на которые полагаются детекторы ИИ — и при этом сохраняет смысл и читаемость вашего контента.</p>
   <p><strong>Открытый код и прозрачность.</strong> HumanType распространяется под лицензией MIT и полностью открыт. Весь исходный код доступен на GitHub. Мы убеждены, что инструменты для очеловечивания ИИ-текста должны быть прозрачными, проверяемыми и свободными от скрытых мотивов.</p>
   <p><strong>Приватность прежде всего.</strong> HumanType работает полностью в вашем браузере. Никакой текст никогда не отправляется на сервер. Никакой аналитики. Никакого отслеживания. Никакого сбора данных. Всё, что вы вставляете, остаётся на вашем устройстве.</p>
   <p><strong>Создано с заботой.</strong> HumanType поддерживается небольшой командой разработчиков и авторов, убеждённых, что технологии должны расширять возможности, а не разоблачать. Мы стремимся сохранять этот инструмент бесплатным, быстрым и эффективным.</p>
+
+  <h2>Что мы делаем</h2>
+  <p>HumanType — это <a href="/ru/how-it-works">инструмент типографской нормализации</a>, который заменяет Unicode-символы, характерные для ИИ-текстов, на обычные ASCII-аналоги. Мы обрабатываем длинные тире, фигурные кавычки, символы многоточия, неразрывные пробелы, дроби, правовые символы и стрелки — 19 правил замены в 7 категориях.</p>
+  <h2>Почему это важно</h2>
+  <p>Детекторы ИИ анализируют не только выбор слов — они проверяют реальные коды Unicode-символов. Длинные тире, фигурные кавычки и юникодные многоточия статистически связаны с машинно-сгенерированным контентом. Подробнее читайте в нашей <a href="/ru/blog/ai-detectors-myths">статье о том, как работают детекторы ИИ</a>.</p>
+  <h2>Начать</h2>
+  <p>Инструмент доступен прямо на <a href="/ru/">главной странице</a>. Никакой регистрации, установки и сбора данных. Вставьте текст, выберите правила, нажмите Заменить.</p>
+
+<div class="cta-box"><p>Попробуйте инструмент сами — бесплатно, мгновенно, полностью приватно.</p><a href="/ru/" class="cta-btn">Открыть HumanType →</a></div>
 </article></div>
 <footer class="site-footer">
   <div class="site-footer-inner">

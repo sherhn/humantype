@@ -7,9 +7,12 @@
 <meta name="description" content="Свяжитесь с командой HumanType. Вопросы, отзывы или предложения о сотрудничестве.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/ru/contact">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/contact">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/contact">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/contact">
 <link rel="icon" type="image/svg+xml" href="https://humantype.sherhn.space/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root { --bg:#f5f0e8; --paper:#fffdf7; --ink:#1a1208; --accent:#b84a1a; --muted:#8a7a62; --border:#d4c9b0; --shadow:rgba(26,18,8,0.12); }
@@ -43,7 +46,43 @@
   .footer-links a:hover { color:var(--accent); }
   .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
   @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/ru/contact">
+<meta property="og:title" content="Контакты HumanType – свяжитесь с нами">
+<meta property="og:description" content="Свяжитесь с командой HumanType. Вопросы, отзывы или предложения о сотрудничестве.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="ru_RU">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Контакты HumanType – свяжитесь с нами">
+<meta name="twitter:description" content="Свяжитесь с командой HumanType. Вопросы, отзывы или предложения о сотрудничестве.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Контакты",
+      "item": "https://humantype.sherhn.space/ru/contact"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <header class="site-header">
@@ -52,18 +91,27 @@
       <svg class="logo-svg" viewBox="0 0 200 200"><rect fill="#1a1208" width="200" height="200" rx="4"/><rect fill="none" stroke="#b84a1a" stroke-width="6" x="8" y="8" width="184" height="184" rx="2"/><rect fill="#b84a1a" x="8" y="8" width="184" height="7"/><rect fill="#fffdf7" x="38" y="48" width="20" height="104"/><rect fill="#fffdf7" x="142" y="48" width="20" height="104"/><rect fill="#fffdf7" x="38" y="90" width="124" height="20"/><rect fill="#b84a1a" x="142" y="132" width="20" height="20"/></svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/ru/">Инструмент</a> <a href="/ru/how-it-works">Как работает</a> <a href="/ru/faq">FAQ</a> <a href="/ru/blog/ai-detectors-myths">Блог</a> <a href="/ru/about">О проекте</a> <a href="/ru/contact" class="active">Контакты</a>
       <span class="lang-switch"><a href="/contact" class="lang-btn">EN</a><a href="/ru/contact" class="lang-btn active">RU</a></span>
     </nav>
   </div>
 </header>
-<div class="main-wrapper"><article class="article-card">
+<div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>Контакты</span></nav>
+  <article class="article-card">
   <h1>Свяжитесь с нами</h1>
   <p>Мы приветствуем ваши вопросы, отзывы и предложения о сотрудничестве.</p>
   <p><strong>Email:</strong> <a href="mailto:sherhn.inc@gmail.com">sherhn.inc@gmail.com</a></p>
   <p><strong>GitHub:</strong> <a href="https://github.com/sherhn/humantype" target="_blank" rel="noopener">github.com/sherhn/humantype</a></p>
   <p>Обычно мы отвечаем в течение 48 часов в рабочие дни. По срочным вопросам используйте email.</p>
+
+  <h2>Частые вопросы</h2>
+  <p>Прежде чем писать, возможно, вы найдёте ответ в нашем <a href="/ru/faq">FAQ</a> или руководстве <a href="/ru/how-it-works">Как работает</a>.</p>
+  <h2>Сообщения об ошибках</h2>
+  <p>Нашли баг или хотите предложить функцию? Создайте issue прямо на <a href="https://github.com/sherhn/humantype" rel="me noopener" target="_blank">GitHub</a>. Мы регулярно просматриваем issues и учитываем обратную связь.</p>
+  <h2>Время ответа</h2>
+  <p>Обычно мы отвечаем на email в течение 48 часов в рабочие дни. Issues на GitHub проверяются еженедельно.</p>
 </article></div>
 <footer class="site-footer">
   <div class="site-footer-inner">

@@ -3,13 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HumanType FAQ – Frequently Asked Questions</title>
+<title>HumanType FAQ – AI Text Humanizer Questions Answered</title>
 <meta name="description" content="Find answers about HumanType: safety, effectiveness against AI detectors, typographic symbols explained, and more.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/faq">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/faq">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/faq">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/faq">
 <link rel="icon" type="image/svg+xml" href="https://humantype.sherhn.space/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -55,7 +58,111 @@
   .footer-links a:hover { color:var(--accent); }
   .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
   @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+  .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
+  .cta-btn:hover { opacity:.85; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/faq">
+<meta property="og:title" content="HumanType FAQ – AI Text Humanizer Questions Answered">
+<meta property="og:description" content="Find answers about HumanType: safety, effectiveness against AI detectors, typographic symbols explained, and more.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HumanType FAQ – AI Text Humanizer Questions Answered">
+<meta name="twitter:description" content="Find answers about HumanType: safety, effectiveness against AI detectors, typographic symbols explained, and more.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is HumanType safe to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. HumanType runs entirely in your browser. Your text is never sent to any server. No data is collected, no analytics are used, and no third-party scripts track your activity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Will this completely bypass AI detectors?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Typographic normalization is one piece of the puzzle. AI detectors use multiple signals — perplexity, burstiness, semantic patterns, and typographic fingerprints. Removing typographic tells significantly reduces detection probability."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do AI models use em dashes and curly quotes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "AI language models are trained on professionally edited text where typographic symbols are standard. The AI simply reproduces these patterns without understanding they are unusual in casual human typing."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does replacing symbols affect the meaning of my text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. The replacements are designed to preserve meaning. An en dash looks almost identical to an em dash. Three dots read exactly the same as the ellipsis glyph. Content and meaning remain unchanged."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I choose which symbols to replace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. HumanType gives you full control. You can enable or disable individual rules, or toggle entire categories on and off."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is HumanType free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, completely free. There are no premium features, no subscriptions, and no usage limits. The tool is open-source and will remain free forever."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need to install anything?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. HumanType is a web-based tool. Just open the website, paste your text, and click Replace. No downloads, no browser extensions, no sign-ups."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "FAQ",
+      "item": "https://humantype.sherhn.space/faq"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -73,7 +180,7 @@
       </svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Tool</a>
       <a href="/how-it-works">How It Works</a>
       <a href="/faq" class="active">FAQ</a>
@@ -89,9 +196,10 @@
 </header>
 
 <div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>FAQ</span></nav>
   <article class="article-card">
     <h1>Frequently Asked Questions</h1>
-    <div class="article-meta">Last updated: May 2026</div>
+    <div class="article-meta">Last updated: <time datetime="2026-05-11">May 2026</time></div>
 
     <details open>
       <summary>Is HumanType safe to use?</summary>
@@ -127,7 +235,9 @@
       <summary>Do I need to install anything?</summary>
       <p>No. HumanType is a web-based tool. Just open the website, paste your text, and click Replace. No downloads, no browser extensions, no sign-ups.</p>
     </details>
-  </article>
+  
+<div class="cta-box"><p>Want to see how it works in detail? Read our complete guide.</p><a href="/how-it-works" class="cta-btn">How It Works →</a></div>
+</article>
 </div>
 
 <footer class="site-footer">

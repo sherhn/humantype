@@ -7,9 +7,12 @@
 <meta name="description" content="Learn what typographic symbols are, why AI text contains them, and how replacing them helps bypass AI detectors. A complete guide to HumanType.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/how-it-works">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/how-it-works">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/how-it-works">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/how-it-works">
 <link rel="icon" type="image/svg+xml" href="https://humantype.sherhn.space/images/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -246,10 +249,64 @@
     .site-header-inner { flex-direction: column; align-items: flex-start; }
     .article-card { padding: 28px 20px; }
   }
+  .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
+  .cta-btn:hover { opacity:.85; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
 <!-- Yandex Autoplacement 19264475 -->
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 <script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/how-it-works">
+<meta property="og:title" content="How HumanType Works – Hide AI Typography Symbols">
+<meta property="og:description" content="Learn what typographic symbols are, why AI text contains them, and how replacing them helps bypass AI detectors.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How HumanType Works – Hide AI Typography Symbols">
+<meta name="twitter:description" content="Learn what typographic symbols are, why AI text contains them, and how replacing them helps bypass AI detectors.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "How to Remove AI Typographic Fingerprints with HumanType",
+  "description": "Use HumanType to replace AI-generated typographic symbols with plain ASCII equivalents, reducing AI detection scores.",
+  "step": [
+    {"@type": "HowToStep", "name": "Paste your text", "text": "Copy your AI-generated text and paste it into the HumanType input field."},
+    {"@type": "HowToStep", "name": "Select replacement rules", "text": "Choose which categories of typographic symbols to replace — dashes, quotes, ellipsis, spaces, and more."},
+    {"@type": "HowToStep", "name": "Click Replace", "text": "Click the Replace button. HumanType processes everything locally in your browser."},
+    {"@type": "HowToStep", "name": "Copy the result", "text": "Copy the normalized text and use it wherever you need it."}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "How It Works",
+      "item": "https://humantype.sherhn.space/how-it-works"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -267,7 +324,7 @@
       </svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Tool</a>
       <a href="/how-it-works" class="active">How It Works</a>
       <a href="/faq">FAQ</a>
@@ -283,9 +340,10 @@
 </header>
 
 <div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>How It Works</span></nav>
   <article class="article-card">
     <h1>How HumanType Works: The Complete Guide</h1>
-    <div class="article-meta">Last updated: May 2026 · Reading time: 7 min</div>
+    <div class="article-meta">Last updated: <time datetime="2026-05-11">May 2026</time> · Reading time: 7 min</div>
 
     <h2>What are typographic symbols?</h2>
     <p>Typographic symbols are special Unicode characters that go beyond basic ASCII. They include em dashes (—), curly quotes (“ ”), the ellipsis character (…), non-breaking spaces, and dozens more. These symbols are designed to make text look polished in print and professional typesetting. But in the digital world, they can become a liability.</p>
@@ -322,7 +380,9 @@
 
     <h2>Privacy and security</h2>
     <p>HumanType runs entirely in your browser. No text is ever sent to a server. The JavaScript code processes everything locally, so your content remains private and secure. There are no analytics, no tracking, and no data collection.</p>
-  </article>
+  
+<div class="cta-box"><p>Ready to remove AI typographic fingerprints? Try the tool now — free, instant, no sign-up.</p><a href="/" class="cta-btn">Try HumanType →</a></div>
+</article>
 </div>
 
 <footer class="site-footer">

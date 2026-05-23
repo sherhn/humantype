@@ -7,6 +7,7 @@
 <meta name="description" content="Разберитесь, какие сигналы используют детекторы ИИ — от перплексии до типографских отпечатков. Развенчание мифов об обнаружении ИИ.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/ru/blog/ai-detectors-myths">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/blog/ai-detectors-myths">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/blog/ai-detectors-myths">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/blog/ai-detectors-myths">
 <!-- Основной ICO (для Яндекса и старых браузеров) -->
@@ -21,6 +22,8 @@
 <!-- Android / PWA -->
 <link rel="icon" type="image/png" sizes="192x192" href="https://humantype.sherhn.space/images/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="https://humantype.sherhn.space/images/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -69,10 +72,72 @@
   .footer-links a:hover { color:var(--accent); }
   .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
   @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+  .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
+  .cta-btn:hover { opacity:.85; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
 <!-- Yandex Autoplacement 19264475 -->
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 <script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/ru/blog/ai-detectors-myths">
+<meta property="og:title" content="Как работают детекторы ИИ: мифы и реальность – Блог HumanType">
+<meta property="og:description" content="Разберитесь, какие сигналы используют детекторы ИИ — от перплексии до типографских отпечатков.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="ru_RU">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Как работают детекторы ИИ: мифы и реальность – Блог HumanType">
+<meta name="twitter:description" content="Разберитесь, какие сигналы используют детекторы ИИ — от перплексии до типографских отпечатков.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Как работают детекторы ИИ: мифы и реальность",
+  "description": "Разберитесь, какие сигналы используют детекторы ИИ — от перплексии до типографских отпечатков. Развенчание мифов об обнаружении ИИ.",
+  "author": {"@type": "Organization", "name": "Команда HumanType"},
+  "publisher": {"@type": "Organization", "name": "HumanType", "url": "https://humantype.sherhn.space"},
+  "datePublished": "2026-05-01",
+  "dateModified": "2026-05-11",
+  "url": "https://humantype.sherhn.space/ru/blog/ai-detectors-myths",
+  "inLanguage": "ru",
+  "image": "https://humantype.sherhn.space/og-image.png",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://humantype.sherhn.space/ru/blog/ai-detectors-myths"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/ru/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Блог",
+      "item": "https://humantype.sherhn.space/ru/blog/ai-detectors-myths"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Детекторы ИИ",
+      "item": "https://humantype.sherhn.space/ru/blog/ai-detectors-myths"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -90,7 +155,7 @@
       </svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/ru/">Инструмент</a>
       <a href="/ru/how-it-works">Как работает</a>
       <a href="/ru/faq">FAQ</a>
@@ -106,9 +171,10 @@
 </header>
 
 <div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><a href="/ru/blog/ai-detectors-myths">Блог</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>Детекторы ИИ</span></nav>
   <article class="article-card">
     <h1>Как работают детекторы ИИ: мифы и реальность</h1>
-    <div class="article-meta">Опубликовано: май 2026 · Время чтения: 6 мин · Автор: Команда HumanType</div>
+    <div class="article-meta">Опубликовано: <time datetime="2026-05-01">май 2026</time> · Время чтения: 6 мин · Автор: Команда HumanType</div>
 
     <h2>Рост детекторов ИИ</h2>
     <p>По мере того как ИИ-тексты заполняют интернет, университеты, издательства и платформы внедряют инструменты обнаружения ИИ. Эти сервисы утверждают, что могут определить, написан ли текст человеком или сгенерирован языковой моделью. Но насколько они точны на самом деле? И какие сигналы они действительно используют?</p>
@@ -137,8 +203,10 @@
     </ul>
 
     <h2>Итог</h2>
-    <p>Детекторы ИИ — полезные инструменты для скрининга, но не непогрешимые судьи. Снижение оценки обнаружения требует многоуровневого подхода: нормализации типографики, варьирования структуры предложений, добавления мелких несовершенств и внесения подлинного человеческого голоса. HumanType решает задачу типографического слоя — остальное зависит от вас.</p>
-  </article>
+    <p>Детекторы ИИ — полезные инструменты для скрининга, но не непогрешимые судьи. Снижение оценки обнаружения требует многоуровневого подхода — <a href="/ru/how-it-works">подробнее в полном руководстве</a>: нормализации типографики, варьирования структуры предложений, добавления мелких несовершенств и внесения подлинного человеческого голоса. HumanType решает задачу типографического слоя — остальное зависит от вас.</p>
+  
+<div class="cta-box"><p>Уберите типографические отпечатки ИИ из вашего текста в один клик — бесплатно и приватно.</p><a href="/ru/" class="cta-btn">Открыть HumanType →</a></div>
+</article>
 </div>
 
 <footer class="site-footer">

@@ -7,6 +7,7 @@
 <meta name="description" content="Understand the real signals AI detectors use — from perplexity to typographic fingerprints. Debunk common myths about AI detection.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://humantype.sherhn.space/blog/ai-detectors-myths">
+<link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/blog/ai-detectors-myths">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/blog/ai-detectors-myths">
 <link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/blog/ai-detectors-myths">
 <!-- Основной ICO (для Яндекса и старых браузеров) -->
@@ -21,6 +22,8 @@
 <!-- Android / PWA -->
 <link rel="icon" type="image/png" sizes="192x192" href="https://humantype.sherhn.space/images/favicon-192.png">
 <link rel="icon" type="image/png" sizes="512x512" href="https://humantype.sherhn.space/images/favicon-512.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -69,10 +72,72 @@
   .footer-links a:hover { color:var(--accent); }
   .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
   @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
+  .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
+  .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
+  .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
+  .cta-btn:hover { opacity:.85; }
+  .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .breadcrumb a { color:var(--accent); text-decoration:none; }
+  .breadcrumb-sep { color:var(--border); }
 </style>
 <!-- Yandex Autoplacement 19264475 -->
 <script src="https://yandex.ru/ads/system/context.js" async></script>
 <script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+<link rel="me" href="https://github.com/sherhn/humantype">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://humantype.sherhn.space/blog/ai-detectors-myths">
+<meta property="og:title" content="How AI Detectors Work: Myths and Reality – HumanType Blog">
+<meta property="og:description" content="Understand the real signals AI detectors use — from perplexity to typographic fingerprints. Debunk common myths about AI detection.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:locale" content="en_US">
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How AI Detectors Work: Myths and Reality – HumanType Blog">
+<meta name="twitter:description" content="Understand the real signals AI detectors use — from perplexity to typographic fingerprints. Debunk common myths about AI detection.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How AI Detectors Work: Myths and Reality",
+  "description": "Understand the real signals AI detectors use — from perplexity to typographic fingerprints. Debunk common myths about AI detection.",
+  "author": {"@type": "Organization", "name": "HumanType Team"},
+  "publisher": {"@type": "Organization", "name": "HumanType", "url": "https://humantype.sherhn.space"},
+  "datePublished": "2026-05-01",
+  "dateModified": "2026-05-11",
+  "url": "https://humantype.sherhn.space/blog/ai-detectors-myths",
+  "inLanguage": "en",
+  "image": "https://humantype.sherhn.space/og-image.png",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://humantype.sherhn.space/blog/ai-detectors-myths"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "HumanType",
+      "item": "https://humantype.sherhn.space/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "https://humantype.sherhn.space/blog/ai-detectors-myths"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "How AI Detectors Work",
+      "item": "https://humantype.sherhn.space/blog/ai-detectors-myths"
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
@@ -90,7 +155,7 @@
       </svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Main navigation">
       <a href="/">Tool</a>
       <a href="/how-it-works">How It Works</a>
       <a href="/faq">FAQ</a>
@@ -106,9 +171,10 @@
 </header>
 
 <div class="main-wrapper">
+  <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><a href="/blog/ai-detectors-myths">Blog</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>How AI Detectors Work</span></nav>
   <article class="article-card">
     <h1>How AI Detectors Work: Myths and Reality</h1>
-    <div class="article-meta">Published: May 2026 · Reading time: 6 min · Author: HumanType Team</div>
+    <div class="article-meta">Published: <time datetime="2026-05-01">May 2026</time> · Reading time: 6 min · Author: HumanType Team</div>
 
     <h2>The rise of AI detection</h2>
     <p>As AI-generated text floods the internet, universities, publishers, and platforms have deployed AI detection tools. These tools claim to identify whether a piece of text was written by a human or generated by a language model. But how accurate are they, really? And what signals do they actually use?</p>
@@ -137,8 +203,10 @@
     </ul>
 
     <h2>The bottom line</h2>
-    <p>AI detectors are useful screening tools but not infallible judges. Reducing detection scores requires a multi-layered approach: normalizing typography, varying sentence structure, adding minor imperfections, and injecting genuine human voice. HumanType handles the typography layer — the rest is up to you.</p>
-  </article>
+    <p>AI detectors are useful screening tools but not infallible judges. Reducing detection scores requires a multi-layered approach — <a href="/how-it-works">learn more in our complete guide</a>: normalizing typography, varying sentence structure, adding minor imperfections, and injecting genuine human voice. HumanType handles the typography layer — the rest is up to you.</p>
+  
+<div class="cta-box"><p>Remove typographic AI fingerprints from your text in one click — free and private.</p><a href="/" class="cta-btn">Try HumanType →</a></div>
+</article>
 </div>
 
 <footer class="site-footer">
