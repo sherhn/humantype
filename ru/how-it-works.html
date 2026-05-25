@@ -3,253 +3,158 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Как работает HumanType – скрыть типографику ИИ</title>
-<meta name="description" content="Узнайте, что такое типографские символы, откуда они берутся в ИИ-тексте и как их замена помогает обойти детекторы ИИ. Полное руководство по HumanType.">
-<meta name="robots" content="index, follow">
+
+<!-- PRIMARY SEO META (RU) -->
+<title>Как работает HumanType: убрать типографику ИИ (2026)</title>
+<meta name="description" content="Полное руководство: почему ИИ-тексты содержат длинные тире и фигурные кавычки и как HumanType заменяет их для снижения оценки детекторов ИИ — бесплатно.">
+<meta name="keywords" content="убрать типографику ИИ, длинное тире в тексте ИИ, фигурные кавычки ИИ, обойти детектор ИИ, типографская нормализация, очеловечить текст ИИ, HumanType как работает">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="author" content="Команда HumanType">
+
+<!-- Canonical & hreflang -->
 <link rel="canonical" href="https://humantype.sherhn.space/ru/how-it-works">
 <link rel="alternate" hreflang="x-default" href="https://humantype.sherhn.space/how-it-works">
-<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/how-it-works">
 <link rel="alternate" hreflang="en" href="https://humantype.sherhn.space/how-it-works">
+<link rel="alternate" hreflang="ru" href="https://humantype.sherhn.space/ru/how-it-works">
+
+<!-- Favicons -->
 <link rel="icon" type="image/svg+xml" href="https://humantype.sherhn.space/images/favicon.svg">
+<link rel="icon" href="https://humantype.sherhn.space/images/favicon.ico" sizes="16x16 32x32 48x48">
+<link rel="apple-touch-icon" href="https://humantype.sherhn.space/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="https://humantype.sherhn.space/images/favicon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="https://humantype.sherhn.space/images/favicon-512.png">
+
+<!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Open Graph -->
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://humantype.sherhn.space/ru/how-it-works">
+<meta property="og:title" content="Как работает HumanType: убрать типографику ИИ (2026)">
+<meta property="og:description" content="Полное руководство: почему ИИ-тексты содержат длинные тире и фигурные кавычки и как HumanType заменяет их для снижения оценки детекторов ИИ.">
+<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="HumanType – Как это работает">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:site_name" content="HumanType">
+<meta property="article:modified_time" content="2026-05-11T00:00:00+00:00">
+<meta property="article:section" content="Руководство">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Как работает HumanType: убрать типографику ИИ (2026)">
+<meta name="twitter:description" content="Полное руководство: почему ИИ-тексты содержат длинные тире и фигурные кавычки и как их убрать.">
+<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
+<meta name="twitter:image:alt" content="HumanType – Как это работает">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  "name": "Как убрать типографические отпечатки ИИ с помощью HumanType",
+  "description": "Используйте HumanType для замены типографических символов ИИ — длинных тире, фигурных кавычек, многоточий — на простые ASCII-аналоги.",
+  "image": { "@type": "ImageObject", "url": "https://humantype.sherhn.space/og-image.png", "width": 1200, "height": 630 },
+  "totalTime": "PT1M",
+  "estimatedCost": { "@type": "MonetaryAmount", "currency": "RUB", "value": "0" },
+  "inLanguage": "ru",
+  "step": [
+    { "@type": "HowToStep", "position": 1, "name": "Вставьте текст", "text": "Скопируйте ваш ИИ-сгенерированный текст и вставьте его в поле ввода HumanType.", "url": "https://humantype.sherhn.space/ru/how-it-works#step1" },
+    { "@type": "HowToStep", "position": 2, "name": "Выберите правила замены", "text": "Выберите категории типографских символов для замены.", "url": "https://humantype.sherhn.space/ru/how-it-works#step2" },
+    { "@type": "HowToStep", "position": 3, "name": "Нажмите 'Заменить'", "text": "HumanType обрабатывает всё локально в вашем браузере.", "url": "https://humantype.sherhn.space/ru/how-it-works#step3" },
+    { "@type": "HowToStep", "position": 4, "name": "Скопируйте результат", "text": "Скопируйте нормализованный текст и используйте его везде.", "url": "https://humantype.sherhn.space/ru/how-it-works#step4" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "HumanType", "item": "https://humantype.sherhn.space/ru/" },
+    { "@type": "ListItem", "position": 2, "name": "Как работает", "item": "https://humantype.sherhn.space/ru/how-it-works" }
+  ]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Почему ИИ-тексты содержат длинные тире и фигурные кавычки?",
+      "acceptedAnswer": { "@type": "Answer", "text": "ИИ-модели обучены на профессионально отредактированных текстах — книгах, статьях, академических работах — в которых активно используется типографика. Модель воспроизводит эти паттерны, не понимая, что они нетипичны для обычного набора человеком." }
+    },
+    {
+      "@type": "Question",
+      "name": "Влияет ли замена символов на смысл текста?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Нет. Замены сохраняют смысл, меняя только коды символов. Читаемость и содержание остаются неизменными." }
+    },
+    {
+      "@type": "Question",
+      "name": "Достаточно ли типографской нормализации для обхода детекторов?",
+      "acceptedAnswer": { "@type": "Answer", "text": "Это важный первый шаг, но не полное решение. Детекторы также анализируют перплексию, бёрстинесс и семантику." }
+    }
+  ]
+}
+</script>
+
+<link rel="me" href="https://github.com/sherhn/humantype">
+
 <style>
   :root {
-    --bg: #f5f0e8;
-    --paper: #fffdf7;
-    --ink: #1a1208;
-    --accent: #b84a1a;
-    --muted: #8a7a62;
-    --border: #d4c9b0;
-    --shadow: rgba(26, 18, 8, 0.12);
+    --bg: #f5f0e8; --paper: #fffdf7; --ink: #1a1208; --accent: #b84a1a; --muted: #8a7a62; --border: #d4c9b0; --shadow: rgba(26,18,8,0.12);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    background: var(--bg);
-    color: var(--ink);
-    font-family: 'Courier Prime', monospace;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
+    background: var(--bg); color: var(--ink); font-family: 'Courier Prime', monospace;
+    min-height: 100vh; display: flex; flex-direction: column; align-items: center; position: relative;
   }
   body::before {
-    content: '';
-    position: fixed;
-    inset: 0;
-    background: repeating-linear-gradient(
-      0deg, transparent, transparent 27px,
-      rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px
-    );
-    pointer-events: none;
-    z-index: 0;
+    content: ''; position: fixed; inset: 0;
+    background: repeating-linear-gradient(0deg, transparent, transparent 27px, rgba(180,160,120,0.15) 27px, rgba(180,160,120,0.15) 28px);
+    pointer-events: none; z-index: 0;
   }
-  .site-header {
-    width: 100%;
-    background: var(--paper);
-    border-bottom: 1px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    box-shadow: 0 1px 4px var(--shadow);
-  }
-  .site-header-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 24px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-  .site-logo {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    color: var(--ink);
-  }
-  .site-logo .logo-svg { width: 36px; height: 36px; }
-  .site-logo-text {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-    color: var(--ink);
-  }
-  .site-logo-text span { color: var(--accent); }
-  .site-nav {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-  .site-nav a {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 6px 12px;
-    border: 1px solid transparent;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .site-nav a:hover,
-  .site-nav a.active {
-    color: var(--ink);
-    border-color: var(--border);
-    background: rgba(180,160,120,0.1);
-  }
-  .lang-switch { display: flex; gap: 0; margin-left: 8px; }
-  .lang-btn {
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.7rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 5px 12px;
-    border: 1.5px solid var(--border);
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    text-decoration: none;
-    transition: all 0.15s;
-  }
-  .lang-btn:first-child { border-right: none; }
-  .lang-btn.active {
-    background: var(--ink);
-    color: var(--bg);
-    border-color: var(--ink);
-  }
-  .lang-btn:not(.active):hover {
-    background: var(--border);
-    color: var(--ink);
-  }
-  .main-wrapper {
-    width: 100%;
-    max-width: 860px;
-    padding: 48px 24px 32px;
-    position: relative;
-    z-index: 1;
-    flex: 1;
-  }
-  .article-card {
-    background: var(--paper);
-    border: 1px solid var(--border);
-    box-shadow: 4px 4px 0 var(--shadow), 8px 8px 0 rgba(26,18,8,0.05);
-    padding: 40px 44px;
-    margin-bottom: 24px;
-    position: relative;
-  }
-  .article-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 3px;
-    background: var(--accent);
-  }
-  h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--ink);
-    margin-bottom: 10px;
-    line-height: 1.2;
-  }
-  .article-meta {
-    font-size: 0.8rem;
-    color: var(--muted);
-    margin-bottom: 28px;
-    padding-bottom: 18px;
-    border-bottom: 1px dashed var(--border);
-  }
-  h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    color: var(--accent);
-    margin: 28px 0 12px;
-    font-weight: 700;
-  }
-  h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    color: var(--ink);
-    margin: 20px 0 8px;
-    font-weight: 700;
-  }
-  p {
-    font-size: 0.9rem;
-    line-height: 1.75;
-    color: #3a3a38;
-    margin-bottom: 12px;
-  }
-  ul, ol {
-    font-size: 0.9rem;
-    line-height: 1.75;
-    color: #3a3a38;
-    margin-bottom: 14px;
-    padding-left: 24px;
-  }
-  li { margin-bottom: 4px; }
-  code {
-    background: rgba(180,160,120,0.18);
-    padding: 2px 6px;
-    font-family: 'Courier Prime', monospace;
-    font-size: 0.85rem;
-  }
-  .callout {
-    background: #fef9f0;
-    border-left: 4px solid var(--accent);
-    padding: 14px 18px;
-    margin: 18px 0;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-  .site-footer {
-    width: 100%;
-    background: var(--paper);
-    border-top: 1px solid var(--border);
-    padding: 24px;
-    text-align: center;
-    z-index: 1;
-    position: relative;
-  }
-  .site-footer-inner {
-    max-width: 860px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    align-items: center;
-  }
-  .footer-links {
-    display: flex;
-    gap: 18px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .footer-links a {
-    font-size: 0.75rem;
-    color: var(--muted);
-    text-decoration: none;
-    letter-spacing: 0.05em;
-  }
-  .footer-links a:hover { color: var(--accent); }
-  .footer-copy {
-    font-size: 0.75rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
-  }
-  @media (max-width: 640px) {
-    .site-header-inner { flex-direction: column; align-items: flex-start; }
-    .article-card { padding: 28px 20px; }
-  }
+  .site-header { width:100%; background:var(--paper); border-bottom:1px solid var(--border); position:sticky; top:0; z-index:50; box-shadow:0 1px 4px var(--shadow); }
+  .site-header-inner { max-width:1100px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; padding:12px 24px; flex-wrap:wrap; gap:16px; }
+  .site-logo { display:flex; align-items:center; gap:12px; text-decoration:none; color:var(--ink); }
+  .site-logo .logo-svg { width:36px; height:36px; }
+  .site-logo-text { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:700; letter-spacing:-0.02em; color:var(--ink); }
+  .site-logo-text span { color:var(--accent); }
+  .site-nav { display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .site-nav a { font-family:'Courier Prime',monospace; font-size:0.75rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; color:var(--muted); text-decoration:none; padding:6px 12px; border:1px solid transparent; transition:all 0.15s; white-space:nowrap; }
+  .site-nav a:hover, .site-nav a.active { color:var(--ink); border-color:var(--border); background:rgba(180,160,120,0.1); }
+  .lang-switch { display:flex; gap:0; margin-left:8px; }
+  .lang-btn { font-family:'Courier Prime',monospace; font-size:0.7rem; font-weight:700; letter-spacing:0.08em; text-transform:uppercase; padding:5px 12px; border:1.5px solid var(--border); background:transparent; color:var(--muted); cursor:pointer; text-decoration:none; transition:all 0.15s; }
+  .lang-btn:first-child { border-right:none; }
+  .lang-btn.active { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+  .lang-btn:not(.active):hover { background:var(--border); color:var(--ink); }
+  .main-wrapper { width:100%; max-width:860px; padding:48px 24px 32px; position:relative; z-index:1; flex:1; }
+  .article-card { background:var(--paper); border:1px solid var(--border); box-shadow:4px 4px 0 var(--shadow),8px 8px 0 rgba(26,18,8,0.05); padding:40px 44px; margin-bottom:24px; position:relative; }
+  .article-card::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:var(--accent); }
+  h1 { font-family:'Playfair Display',serif; font-size:2rem; font-weight:700; color:var(--ink); margin-bottom:10px; line-height:1.2; }
+  .article-meta { font-size:0.8rem; color:var(--muted); margin-bottom:28px; padding-bottom:18px; border-bottom:1px dashed var(--border); }
+  h2 { font-family:'Playfair Display',serif; font-size:1.3rem; color:var(--accent); margin:28px 0 12px; font-weight:700; }
+  h3 { font-family:'Playfair Display',serif; font-size:1rem; color:var(--ink); margin:20px 0 8px; font-weight:700; }
+  p { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:12px; }
+  ul, ol { font-size:0.9rem; line-height:1.75; color:#3a3a38; margin-bottom:14px; padding-left:24px; }
+  li { margin-bottom:4px; }
+  code { background:rgba(180,160,120,0.18); padding:2px 6px; font-family:'Courier Prime',monospace; font-size:0.85rem; }
+  .callout { background:#fef9f0; border-left:4px solid var(--accent); padding:14px 18px; margin:18px 0; font-size:0.85rem; color:var(--muted); }
+  .site-footer { width:100%; background:var(--paper); border-top:1px solid var(--border); padding:24px; text-align:center; z-index:1; position:relative; }
+  .site-footer-inner { max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:12px; align-items:center; }
+  .footer-links { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; }
+  .footer-links a { font-size:0.75rem; color:var(--muted); text-decoration:none; letter-spacing:0.05em; }
+  .footer-links a:hover { color:var(--accent); }
+  .footer-copy { font-size:0.75rem; color:var(--muted); letter-spacing:0.05em; }
+  @media (max-width:640px) { .site-header-inner { flex-direction:column; align-items:flex-start; } .article-card { padding:28px 20px; } }
   .cta-box { background:var(--bg); border:1px solid var(--border); padding:20px 24px; margin-top:28px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; }
   .cta-box p { margin:0; font-size:.85rem; color:var(--muted); }
   .cta-btn { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.8rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; padding:10px 22px; text-decoration:none; border:none; cursor:pointer; transition:opacity .15s; }
@@ -257,57 +162,30 @@
   .breadcrumb { font-size:.72rem; color:var(--muted); margin-bottom:20px; display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
   .breadcrumb a { color:var(--accent); text-decoration:none; }
   .breadcrumb-sep { color:var(--border); }
+  .toc { background:var(--bg); border:1px solid var(--border); padding:16px 20px; margin:0 0 28px; }
+  .toc-title { font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; margin-bottom:10px; }
+  .toc ol { padding-left:18px; display:flex; flex-direction:column; gap:5px; }
+  .toc li { font-size:.82rem; }
+  .toc a { color:var(--accent); text-decoration:none; }
+  .toc a:hover { text-decoration:underline; }
+  .step-badge { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.7rem; font-weight:700; letter-spacing:.06em; padding:2px 8px; margin-right:8px; vertical-align:middle; }
+  .article-img { width:100%; height:auto; display:block; margin:20px 0; border:1px solid var(--border); }
+  .cmp-table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:.82rem; }
+  .cmp-table th { background:var(--ink); color:var(--bg); font-family:'Courier Prime',monospace; font-size:.75rem; letter-spacing:.06em; padding:8px 12px; text-align:left; }
+  .cmp-table td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+  .cmp-table tr:nth-child(even) td { background:var(--bg); }
+  .cmp-table .ok { color:#2a7a2a; font-weight:700; }
+  .cmp-table .bad { color:#b84a1a; font-weight:700; }
+  .case-box { background:#fef9f0; border:1px solid #e8d8b8; padding:18px 22px; margin:18px 0; }
+  .case-box .case-label { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; margin-bottom:6px; }
+  .case-box p { margin-bottom:6px; }
+  .share-block { margin-top:28px; padding-top:20px; border-top:1px dashed var(--border); }
+  .share-block .share-label { font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; margin-bottom:12px; }
+  .share-buttons { display:flex; gap:10px; flex-wrap:wrap; }
+  .share-btn { display:inline-flex; align-items:center; gap:7px; padding:8px 16px; font-family:'Courier Prime',monospace; font-size:.75rem; font-weight:700; letter-spacing:.05em; text-decoration:none; border:1.5px solid var(--border); color:var(--ink); background:transparent; transition:all .15s; cursor:pointer; }
+  .share-btn:hover { background:var(--ink); color:var(--bg); border-color:var(--ink); }
+  .share-btn svg { flex-shrink:0; }
 </style>
-<!-- Yandex Autoplacement 19264475 -->
-<script src="https://yandex.ru/ads/system/context.js" async></script>
-<script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
-<link rel="me" href="https://github.com/sherhn/humantype">
-<!-- Open Graph -->
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://humantype.sherhn.space/ru/how-it-works">
-<meta property="og:title" content="Как работает HumanType – скрыть типографику ИИ">
-<meta property="og:description" content="Узнайте, что такое типографские символы, откуда они берутся в ИИ-тексте и как их замена помогает обойти детекторы ИИ.">
-<meta property="og:image" content="https://humantype.sherhn.space/og-image.png">
-<meta property="og:locale" content="ru_RU">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Как работает HumanType – скрыть типографику ИИ">
-<meta name="twitter:description" content="Узнайте, что такое типографские символы, откуда они берутся в ИИ-тексте и как их замена помогает обойти детекторы ИИ.">
-<meta name="twitter:image" content="https://humantype.sherhn.space/og-image.png">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "Как убрать типографические отпечатки ИИ с помощью HumanType",
-  "description": "Используйте HumanType для замены типографических символов ИИ на обычные ASCII-аналоги.",
-  "step": [
-    {"@type": "HowToStep", "name": "Вставьте текст", "text": "Скопируйте ваш ИИ-сгенерированный текст и вставьте его в поле ввода HumanType."},
-    {"@type": "HowToStep", "name": "Выберите правила замены", "text": "Выберите категории типографических символов для замены — тире, кавычки, многоточие, пробелы и другие."},
-    {"@type": "HowToStep", "name": "Нажмите Заменить", "text": "Нажмите кнопку замены. HumanType обрабатывает всё локально в браузере."},
-    {"@type": "HowToStep", "name": "Скопируйте результат", "text": "Скопируйте нормализованный текст и используйте его там, где нужно."}
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "HumanType",
-      "item": "https://humantype.sherhn.space/ru/"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Как работает",
-      "item": "https://humantype.sherhn.space/ru/how-it-works"
-    }
-  ]
-}
-</script>
 </head>
 <body>
 
@@ -325,7 +203,7 @@
       </svg>
       <div class="site-logo-text">Human<span>Type</span></div>
     </a>
-    <nav class="site-nav" aria-label="Main navigation">
+    <nav class="site-nav" aria-label="Основная навигация">
       <a href="/ru/">Инструмент</a>
       <a href="/ru/how-it-works" class="active">Как работает</a>
       <a href="/ru/faq">FAQ</a>
@@ -341,49 +219,156 @@
 </header>
 
 <div class="main-wrapper">
-  <nav class="breadcrumb" aria-label="Хлебные крошки"><a href="/ru/">HumanType</a><span class="breadcrumb-sep" aria-hidden="true">›</span><span>Как работает</span></nav>
-  <article class="article-card">
-    <h1>Как работает HumanType: полное руководство</h1>
-    <div class="article-meta">Обновлено: <time datetime="2026-05-11">май 2026</time> · Время чтения: 7 мин</div>
+  <nav class="breadcrumb" aria-label="Хлебные крошки">
+    <a href="/ru/">HumanType</a>
+    <span class="breadcrumb-sep" aria-hidden="true">&#x203a;</span>
+    <span>Как работает</span>
+  </nav>
 
-    <h2>Что такое типографские символы?</h2>
-    <p>Типографские символы — это специальные знаки Юникода, выходящие за рамки базового ASCII. К ним относятся длинное тире (—), фигурные кавычки (“ ”), символ многоточия (…), неразрывные пробелы и десятки других. Эти символы созданы, чтобы текст выглядел профессионально в печати и вёрстке. Но в цифровой среде они могут стать проблемой.</p>
+  <article class="article-card" itemscope itemtype="https://schema.org/TechArticle">
+    <meta itemprop="dateModified" content="2026-05-11">
+    <meta itemprop="author" content="Команда HumanType">
+    <meta itemprop="image" content="https://humantype.sherhn.space/og-image.png">
+    <meta itemprop="inLanguage" content="ru">
 
-    <h2>Почему ИИ-текст содержит эти символы?</h2>
-    <p>Большие языковые модели (LLM) — GPT-4, Claude и другие — обучаются на огромных массивах профессионально отредактированных текстов: книг, статей, научных работ. Эти источники богаты типографскими символами, потому что изначально форматировались профессиональными инструментами вёрстки. Когда ИИ генерирует текст, он воспроизводит эти шаблоны форматирования, включая использование длинного тире вместо дефиса, фигурных кавычек вместо прямых и символа многоточия (…) вместо трёх отдельных точек.</p>
-    <p>Для ИИ это просто токены. Модель не знает и не заботится о том, что <code>—</code> и <code>-</code> визуально различаются; она просто воспроизводит то, что видела во время обучения.</p>
-
-    <h2>Как детекторы ИИ используют типографские символы?</h2>
-    <p>Инструменты обнаружения ИИ (GPTZero, Originality.ai, Turnitin AI detection и другие) анализируют множество сигналов: перплексию, взрывчатость, семантические паттерны и — что важно — типографские отпечатки. Наличие определённых символов Юникода является статистически значимым признаком того, что текст сгенерирован машиной, а не человеком.</p>
-    <p>Большинство людей не умеют набирать длинное тире. Они используют дефис (-) или двойной дефис (--). Они не вставляют неразрывный пробел — просто нажимают пробел. Они не используют символ многоточия — просто ставят три точки. Эти мелкие различия образуют обнаруживаемый паттерн.</p>
-
-    <div class="callout">
-      <strong>Ключевой вывод:</strong> Типографские символы — не единственный сигнал обнаружения, но один из самых лёгких для устранения. Нормализуя их до простого ASCII, вы напрямую снижаете статистические маркеры, на которые полагаются детекторы ИИ.
+    <h1 itemprop="headline">Как работает HumanType: полное руководство</h1>
+    <div class="article-meta">
+      Обновлено: <time datetime="2026-05-11" itemprop="dateModified">11 мая 2026</time>
+      &nbsp;&middot;&nbsp;Время чтения: 9 мин
     </div>
 
-    <h2>Что заменяет HumanType?</h2>
-    <p>HumanType применяет 19 правил замены в 7 категориях:</p>
+    <nav class="toc" aria-label="Содержание">
+      <div class="toc-title">Содержание</div>
+      <ol>
+        <li><a href="#what-are">Что такое типографские символы?</a></li>
+        <li><a href="#why-ai">Почему ИИ-текст их содержит?</a></li>
+        <li><a href="#how-detectors">Как детекторы используют типографику?</a></li>
+        <li><a href="#what-replaces">Что заменяет HumanType?</a></li>
+        <li><a href="#comparison">Таблица сравнения символов</a></li>
+        <li><a href="#case">Практический пример</a></li>
+        <li><a href="#readability">Влияет ли это на читаемость?</a></li>
+        <li><a href="#is-enough">Достаточно ли этого для обхода детекторов?</a></li>
+        <li><a href="#privacy">Конфиденциальность и безопасность</a></li>
+        <li><a href="#steps">Пошаговая инструкция</a></li>
+      </ol>
+    </nav>
+
+    <div itemprop="articleBody">
+
+    <h2 id="what-are">Что такое типографские символы?</h2>
+    <p>Типографские символы — это специальные Unicode-символы, выходящие за рамки базового ASCII. К ним относятся <strong>длинное тире</strong> (&#x2014;), <strong>фигурные кавычки</strong> (&#xAB; &#xBB; или &#x201C; &#x201D;), <strong>символ многоточия</strong> (&#x2026;), неразрывные пробелы и многое другое. Эти символы разработаны для красивого оформления текста в печатных изданиях — но в цифровом пространстве их наличие становится нежелательным сигналом при проверке детекторами ИИ.</p>
+    <p>Важно понимать: алгоритмы детекции анализируют текст не только по смыслу, но и посимвольно — выявляя статистические паттерны, отличающие машинный вывод от человеческого набора. Профессионально сверстанная книга и обычное письмо человека находятся на противоположных полюсах типографического спектра, и большие языковые модели склонны воспроизводить стиль первого.</p>
+
+    <img class="article-img" src="https://humantype.sherhn.space/images/blog/ru/how-it-works/1.webp" alt="Сравнение типографских символов ИИ и их ASCII-аналогов после нормализации через HumanType" width="800" height="420" loading="lazy">
+
+    <h2 id="why-ai">Почему ИИ-тексты содержат типографские символы?</h2>
+    <p>Большие языковые модели (LLM) — GPT-4, Claude, Gemini и другие — обучаются на огромных корпусах профессионально отредактированных текстов: книг, статей и академических работ. Эти источники богаты типографскими символами, поскольку изначально форматировались профессиональными издательскими инструментами. Когда ИИ генерирует текст, он воспроизводит эти паттерны форматирования, включая длинные тире вместо дефисов, фигурные кавычки вместо прямых и символ многоточия (&#x2026;) вместо трёх точек (...).</p>
+    <p>Для ИИ это просто токены. Модель не знает и не заботится о визуальном различии между <code>&#x2014;</code> и <code>-</code> — она просто воспроизводит то, что видела в процессе обучения. Это не дефект модели, а закономерное следствие обучения на качественных редакционных источниках. Однако именно это создаёт измеримый типографический отпечаток, который используют детекторы.</p>
+    <p>Исследования в области стилометрического анализа и атрибуции текста указывают на то, что модели, обученные на отредактированных корпусах, воспроизводят типографические конвенции этих корпусов. Эта тема обсуждается, в частности, в обзорных работах по методам детекции ИИ-текстов (см. материалы arXiv cs.CL начиная с 2023 года).</p>
+
+    <h2 id="how-detectors">Как детекторы ИИ используют типографские символы?</h2>
+    <p>Инструменты детекции ИИ — в том числе <strong>GPTZero</strong>, <strong>Originality.ai</strong> и <strong>AI-детекция Turnitin</strong> — анализируют несколько сигналов: перплексию, бёрстинесс, семантические паттерны и — что важно — <strong>типографические отпечатки</strong>. Присутствие определённых Unicode-символов является статистически значимым признаком машинного происхождения текста.</p>
+    <p>Большинство людей не знают, как набрать длинное тире. Они используют дефис (<code>-</code>) или двойной дефис (<code>--</code>). Они не вставляют неразрывный пробел — просто нажимают пробел. Они не используют Unicode-многоточие — набирают три точки. Эти мелкие различия формируют обнаруживаемый паттерн, который эксплуатируют детекторы.</p>
+
+    <img class="article-img" src="https://humantype.sherhn.space/images/blog/ru/how-it-works/2.webp" alt="Схема пяти уровней анализа сигналов детекторов ИИ, типографические маркеры выделены как наиболее лёгкие для устранения" width="800" height="440" loading="lazy">
+
+    <div class="callout">
+      <strong>Ключевой вывод:</strong> Типографские символы — не единственный сигнал обнаружения, но один из самых простых для устранения. Нормализуя их до простого ASCII, вы напрямую снижаете статистические маркеры, на которые опираются детекторы ИИ — буквально за секунду.
+    </div>
+
+    <h2 id="what-replaces">Что заменяет HumanType?</h2>
+    <p>HumanType применяет <strong>19 правил замены в 7 категориях</strong>:</p>
     <ul>
-      <li><strong>Тире:</strong> Длинное тире (—) в начале строк становится дефисом; внутритекстовое длинное тире становится коротким (–). Маркеры списков (•) становятся дефисами.</li>
-      <li><strong>Многоточие:</strong> Единый юникодный символ (…) становится тремя отдельными точками (...).</li>
-      <li><strong>Кавычки:</strong> Фигурные одинарные (‘ ’), фигурные двойные (“ ”) и ёлочки (« ») становятся прямыми ASCII-аналогами (' и ").</li>
-      <li><strong>Специальные пробелы:</strong> Неразрывный пробел (U+00A0), тонкий пробел (U+2009) и волосяной пробел (U+200A) становятся обычными пробелами.</li>
-      <li><strong>Дроби и математика:</strong> ½ → 1/2, ¼ → 1/4, ¾ → 3/4, × → *.</li>
-      <li><strong>Правовые знаки:</strong> ® → (R), ™ → (TM), © → (c), † ‡ → *.</li>
-      <li><strong>Стрелки:</strong> → ➔ → ->, ⇒ → =>, ← → <-, ⇐ → <=.</li>
+      <li><strong>Тире:</strong> Длинные тире (&#x2014;) в начале строки заменяются на дефисы; в тексте — на короткие тире (&#x2013;). Маркеры списка (&#x2022;) заменяются на дефисы.</li>
+      <li><strong>Многоточие:</strong> Одиночный Unicode-символ (&#x2026;) заменяется на три отдельные точки (...).</li>
+      <li><strong>Кавычки:</strong> Фигурные одинарные (&#x2018; &#x2019;), фигурные двойные (&#x201C; &#x201D;) и «ёлочки» (&#xAB; &#xBB;) заменяются на прямые ASCII-аналоги (' и ").</li>
+      <li><strong>Специальные пробелы:</strong> Неразрывный пробел (U+00A0), тонкий пробел (U+2009) и волосной пробел (U+200A) заменяются на обычные пробелы.</li>
+      <li><strong>Дроби и математика:</strong> &frac12; &rarr; 1/2, &frac14; &rarr; 1/4, &frac34; &rarr; 3/4, &times; &rarr; *.</li>
+      <li><strong>Правовые символы:</strong> &reg; &rarr; (R), &trade; &rarr; (TM), &copy; &rarr; (c), &dagger; &Dagger; &rarr; *.</li>
+      <li><strong>Стрелки:</strong> &rarr; &#x2794; &rarr; -&gt;, &rArr; &rarr; =&gt;, &larr; &rarr; &lt;-, &lArr; &rarr; &lt;=.</li>
     </ul>
 
-    <h2>Влияет ли это на читаемость?</h2>
-    <p>Нет. Замены разработаны так, чтобы сохранить смысл, изменяя только коды символов. Короткое тире (–) выглядит почти так же, как длинное (—) для читателя, но несёт иную статистическую сигнатуру. Три точки (...) читаются так же, как символ многоточия (…). Текст остаётся полностью читаемым и профессиональным.</p>
+    <h2 id="comparison">Таблица сравнения символов</h2>
+    <p>В таблице ниже перечислены наиболее распространённые типографские символы ИИ, их Unicode-коды и ASCII-аналоги, на которые HumanType их заменяет. Все замены сохраняют смысл для читателя, устраняя при этом статистический маркер.</p>
+    <table class="cmp-table" aria-label="Сравнение типографских символов ИИ и нормализованного ASCII">
+      <thead>
+        <tr>
+          <th>Символ</th>
+          <th>Название</th>
+          <th>Unicode</th>
+          <th>В ИИ-тексте?</th>
+          <th>Заменяется на</th>
+          <th>Сигнал детектора?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>&#x2014;</td><td>Длинное тире</td><td>U+2014</td><td class="bad">Очень часто</td><td><code>-</code> или <code>&#x2013;</code></td><td class="bad">Сильный</td></tr>
+        <tr><td>&#x201C; &#x201D;</td><td>Фигурные двойные кавычки</td><td>U+201C/D</td><td class="bad">Часто</td><td><code>&quot;</code></td><td class="bad">Сильный</td></tr>
+        <tr><td>&#x2026;</td><td>Символ многоточия</td><td>U+2026</td><td class="bad">Часто</td><td><code>...</code></td><td class="bad">Умеренный</td></tr>
+        <tr><td>&#x00A0;</td><td>Неразрывный пробел</td><td>U+00A0</td><td class="bad">Иногда</td><td>Пробел U+0020</td><td class="bad">Умеренный</td></tr>
+        <tr><td>&#x2018; &#x2019;</td><td>Фигурные одинарные кавычки</td><td>U+2018/9</td><td class="bad">Часто</td><td><code>'</code></td><td class="bad">Умеренный</td></tr>
+        <tr><td>&#xAB; &#xBB;</td><td>«Ёлочки»</td><td>U+00AB/BB</td><td class="bad">В ru-текстах</td><td><code>&quot;</code></td><td class="bad">Умеренный</td></tr>
+        <tr><td>&#x2022;</td><td>Маркер списка</td><td>U+2022</td><td class="bad">Иногда</td><td><code>-</code></td><td class="ok">Слабый</td></tr>
+        <tr><td>&reg; &trade;</td><td>Правовые символы</td><td>U+00AE/2122</td><td class="bad">Редко</td><td>(R) (TM)</td><td class="ok">Слабый</td></tr>
+      </tbody>
+    </table>
 
-    <h2>Достаточно ли этого для обхода детекторов ИИ?</h2>
-    <p>Типографская нормализация сама по себе — не панацея. Продвинутые детекторы ИИ также анализируют структуру предложений, распределение лексики и семантическую связность. Однако удаление типографских «улик» — это критически важный первый шаг, который одновременно снижает несколько сигналов обнаружения. В сочетании с другими методами очеловечивания (варьирование длины предложений, добавление мелких несовершенств, внесение личного голоса) это значительно повышает шансы пройти проверку.</p>
+    <h2 id="case">Практический пример</h2>
+    <div class="case-box">
+      <div class="case-label">Иллюстративный сценарий</div>
+      <p>Студент готовит обзор литературы объёмом около 600 слов для сдачи через Turnitin. Текст написан с помощью языковой модели и содержит характерную плотность типографических символов: около дюжины длинных тире, несколько пар фигурных кавычек, «ёлочки» и одиночные символы многоточия.</p>
+      <p>После запуска текста через HumanType со всеми активными категориями все типографические символы заменяются на ASCII-аналоги менее чем за секунду. Структура, аргументация и каждое предложение остаются неизменными. Далее студент просматривает и редактирует текст для придания ему личного голоса и точности перед сдачей.</p>
+      <p><em>Примечание: результаты работы детекторов ИИ варьируются в зависимости от документа, версии и настроек инструмента. Типографская нормализация устраняет один класс сигналов и не гарантирует конкретный результат проверки.</em></p>
+    </div>
 
-    <h2>Приватность и безопасность</h2>
-    <p>HumanType работает полностью в вашем браузере. Никакой текст никогда не отправляется на сервер. JavaScript-код обрабатывает всё локально, поэтому ваш контент остаётся приватным и защищённым. Никакой аналитики, никакого отслеживания, никакого сбора данных.</p>
-  
-<div class="cta-box"><p>Готовы убрать типографические отпечатки ИИ? Попробуйте инструмент прямо сейчас — бесплатно, мгновенно, без регистрации.</p><a href="/ru/" class="cta-btn">Открыть HumanType →</a></div>
-</article>
+    <h2 id="readability">Влияет ли это на читаемость текста?</h2>
+    <p>Нет. Замены разработаны так, чтобы сохранить смысл, изменив только коды символов. Короткое тире (&#x2013;) выглядит почти так же, как длинное (&#x2014;) для читателя, но несёт другую статистическую подпись. Три точки (...) читаются так же, как символ многоточия (&#x2026;). Текст остаётся полностью читаемым и профессиональным.</p>
+    <p>Более того, простой ASCII-синтаксис нередко предпочтителен в цифровой среде: он корректно отображается на всех устройствах, в почтовых клиентах и CMS без риска проблем с кодировкой. Многие редакционные руководства для веб-контента прямо рекомендуют прямые кавычки и тире на основе дефиса именно по этой причине.</p>
+
+    <h2 id="is-enough">Достаточно ли этого для обхода детекторов ИИ?</h2>
+    <p>Типографская нормализация сама по себе не является панацеей. Продвинутые детекторы ИИ также анализируют структуру предложений, распределение словаря и семантическую связность. Однако устранение типографских «улик» — это критически важный первый шаг, одновременно снижающий несколько сигналов обнаружения. В сочетании с другими методами — вариацией длины предложений, добавлением небольших несовершенств, привнесением личного голоса — это заметно улучшает результат при проверке.</p>
+    <p>Представьте это как работу со слоями: типографские отпечатки находятся на поверхности ИИ-текста и устраняются быстрее всего. Более глубокие сигналы — перплексия и бёрстинесс — требуют более тщательного редактирования. Начав с типографской нормализации, вы снимаете наиболее заметные маркеры до того, как тратить время на глубокую правку. <a href="/ru/blog/ai-detectors-myths">Читайте наш полный разбор сигналов детекции ИИ</a>.</p>
+
+    <h2 id="privacy">Конфиденциальность и безопасность</h2>
+    <p>HumanType работает полностью в вашем браузере. Ни один текст никогда не отправляется на сервер. JavaScript-код обрабатывает всё локально, поэтому ваш контент остаётся полностью приватным и защищённым. Никакой аналитики, никакого отслеживания, никакого сбора данных.</p>
+    <p>Такая архитектура также означает, что HumanType работает офлайн после первой загрузки страницы, не зависит от серверных сбоев и не добавляет задержек от сетевых запросов. Для тех, кто работает с чувствительными черновиками — юридическими документами, внутренними отчётами, личными текстами — локальная обработка является наиболее приватным доступным вариантом.</p>
+
+    <h2 id="steps">Пошаговая инструкция</h2>
+    <img class="article-img" src="https://humantype.sherhn.space/images/blog/ru/how-it-works/3.webp" alt="Визуальная инструкция из четырёх шагов: вставить текст, выбрать правила, нажать заменить, скопировать результат" width="800" height="340" loading="lazy">
+    <ol>
+      <li id="step1"><span class="step-badge">Шаг 1</span> <strong>Вставьте текст</strong> в поле ввода на <a href="/ru/">главной странице</a>.</li>
+      <li id="step2"><span class="step-badge">Шаг 2</span> <strong>Выберите правила замены</strong> — отметьте нужные категории или оставьте все активными для максимальной нормализации.</li>
+      <li id="step3"><span class="step-badge">Шаг 3</span> <strong>Нажмите «Заменить»</strong> — обработка происходит мгновенно в браузере.</li>
+      <li id="step4"><span class="step-badge">Шаг 4</span> <strong>Скопируйте результат</strong> и используйте его там, где необходимо.</li>
+    </ol>
+
+    </div><!-- /articleBody -->
+
+    <div class="cta-box">
+      <p>Готовы убрать типографские отпечатки ИИ? Попробуйте сейчас — бесплатно, мгновенно, без регистрации.</p>
+      <a href="/ru/" class="cta-btn">Попробовать HumanType &rarr;</a>
+    </div>
+
+    <!-- Share block -->
+    <div class="share-block">
+      <div class="share-label">Поделиться статьёй</div>
+      <div class="share-buttons">
+        <a class="share-btn" id="share-twitter" href="#" rel="noopener noreferrer" target="_blank" aria-label="Поделиться в X / Twitter">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4l16 16M4 20L20 4"/></svg>
+          X / Twitter
+        </a>
+        <a class="share-btn" id="share-telegram" href="#" rel="noopener noreferrer" target="_blank" aria-label="Поделиться в Telegram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M21.05 2.34L2.27 9.6c-1.3.52-1.29 1.25-.24 1.58l4.82 1.5 11.14-7.03c.52-.32 1-.15.61.2L8.7 15.24v0l-.37 5.07c.54 0 .78-.25 1.08-.54l2.59-2.52 5.38 3.97c.99.55 1.7.26 1.95-.92l3.54-16.7c.37-1.47-.56-2.14-1.82-1.26z"/></svg>
+          Telegram
+        </a>
+        <a class="share-btn" id="share-linkedin" href="#" rel="noopener noreferrer" target="_blank" aria-label="Поделиться в LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+  </article>
 </div>
 
 <footer class="site-footer">
@@ -397,9 +382,27 @@
       <a href="/ru/contact">Контакты</a>
       <a href="/ru/privacy">Политика конфиденциальности</a>
     </div>
-    <div class="footer-copy">&copy; 2026 HumanType – типографические символы → человеческие аналоги</div>
+    <div class="footer-copy">&copy; 2026 HumanType</div>
   </div>
 </footer>
+
+<!-- Yandex Autoplacement (перенесено в конец body) -->
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+<script data-page-id="19264475" src="https://yandex.ru/ads/system/ap-loader.js" async></script>
+
+<!-- Share buttons logic -->
+<script>
+(function() {
+  var url = encodeURIComponent(window.location.href);
+  var title = encodeURIComponent(document.title);
+  document.getElementById('share-twitter').href =
+    'https://twitter.com/intent/tweet?url=' + url + '&text=' + title;
+  document.getElementById('share-telegram').href =
+    'https://t.me/share/url?url=' + url + '&text=' + title;
+  document.getElementById('share-linkedin').href =
+    'https://www.linkedin.com/shareArticle?mini=true&url=' + url + '&title=' + title;
+})();
+</script>
 
 </body>
 </html>
