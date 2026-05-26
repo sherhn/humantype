@@ -170,12 +170,17 @@
   .toc a:hover { text-decoration:underline; }
   .step-badge { display:inline-block; background:var(--accent); color:#fff; font-family:'Courier Prime',monospace; font-size:.7rem; font-weight:700; letter-spacing:.06em; padding:2px 8px; margin-right:8px; vertical-align:middle; }
   .article-img { width:100%; height:auto; display:block; margin:20px 0; border:1px solid var(--border); }
-  .cmp-table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:.82rem; }
-  .cmp-table th { background:var(--ink); color:var(--bg); font-family:'Courier Prime',monospace; font-size:.75rem; letter-spacing:.06em; padding:8px 12px; text-align:left; }
+  .table-scroll { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:16px 0 20px; }
+  .cmp-table { width:100%; border-collapse:collapse; font-size:.82rem; min-width:520px; }
+  .cmp-table th { background:var(--ink); color:var(--bg); font-family:'Courier Prime',monospace; font-size:.75rem; letter-spacing:.06em; padding:8px 12px; text-align:left; white-space:nowrap; }
   .cmp-table td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
   .cmp-table tr:nth-child(even) td { background:var(--bg); }
   .cmp-table .ok { color:#2a7a2a; font-weight:700; }
   .cmp-table .bad { color:#b84a1a; font-weight:700; }
+  @media (max-width:640px) {
+    .cmp-table { font-size:.75rem; }
+    .cmp-table th, .cmp-table td { padding:6px 8px; }
+  }
   .case-box { background:#fef9f0; border:1px solid #e8d8b8; padding:18px 22px; margin:18px 0; }
   .case-box .case-label { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; margin-bottom:6px; }
   .case-box p { margin-bottom:6px; }
@@ -290,6 +295,7 @@
 
     <h2 id="comparison">Таблица сравнения символов</h2>
     <p>В таблице ниже перечислены наиболее распространённые типографские символы ИИ, их Unicode-коды и ASCII-аналоги, на которые HumanType их заменяет. Все замены сохраняют смысл для читателя, устраняя при этом статистический маркер.</p>
+    <div class="table-scroll">
     <table class="cmp-table" aria-label="Сравнение типографских символов ИИ и нормализованного ASCII">
       <thead>
         <tr>
@@ -312,6 +318,7 @@
         <tr><td>&reg; &trade;</td><td>Правовые символы</td><td>U+00AE/2122</td><td class="bad">Редко</td><td>(R) (TM)</td><td class="ok">Слабый</td></tr>
       </tbody>
     </table>
+    </div>
 
     <h2 id="case">Практический пример</h2>
     <div class="case-box">

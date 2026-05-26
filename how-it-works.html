@@ -182,12 +182,14 @@
   /* Article image */
   .article-img { width:100%; height:auto; display:block; margin:20px 0; border:1px solid var(--border); }
   /* Comparison table */
-  .cmp-table { width:100%; border-collapse:collapse; margin:16px 0 20px; font-size:.82rem; }
-  .cmp-table th { background:var(--ink); color:var(--bg); font-family:'Courier Prime',monospace; font-size:.75rem; letter-spacing:.06em; padding:8px 12px; text-align:left; }
+  .table-scroll { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:16px 0 20px; }
+  .cmp-table { width:100%; border-collapse:collapse; font-size:.82rem; min-width:520px; }
+  .cmp-table th { background:var(--ink); color:var(--bg); font-family:'Courier Prime',monospace; font-size:.75rem; letter-spacing:.06em; padding:8px 12px; text-align:left; white-space:nowrap; }
   .cmp-table td { padding:8px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
   .cmp-table tr:nth-child(even) td { background:var(--bg); }
   .cmp-table .ok { color:#2a7a2a; font-weight:700; }
   .cmp-table .bad { color:#b84a1a; font-weight:700; }
+  @media (max-width:640px) { .cmp-table { font-size:.75rem; } .cmp-table th, .cmp-table td { padding:6px 8px; } }
   /* Case study */
   .case-box { background:#fef9f0; border:1px solid #e8d8b8; padding:18px 22px; margin:18px 0; }
   .case-box .case-label { font-size:.68rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; margin-bottom:6px; }
@@ -303,6 +305,7 @@
 
     <h2 id="comparison">Symbol comparison table</h2>
     <p>The table below shows the most common AI typographic symbols, their Unicode code points, and the plain ASCII equivalents HumanType substitutes. All substitutions preserve meaning for human readers while removing the statistical marker.</p>
+    <div class="table-scroll">
     <table class="cmp-table" aria-label="Typographic symbol comparison: AI output vs normalized ASCII">
       <thead>
         <tr>
@@ -325,6 +328,7 @@
         <tr><td>&frac12; &frac14;</td><td>Fraction glyphs</td><td>U+00BD/BC</td><td class="bad">Rare</td><td>1/2, 1/4</td><td class="ok">Weak</td></tr>
       </tbody>
     </table>
+    </div>
 
     <h2 id="case">Real-world case study</h2>
     <div class="case-box">

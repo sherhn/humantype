@@ -157,12 +157,14 @@
   .article-img img { width:100%; height:auto; display:block; }
   .article-img figcaption { font-size:.75rem; color:var(--muted); padding:8px 12px; background:var(--bg); border-top:1px solid var(--border); font-style:italic; }
   /* Comparison table */
-  .data-table { width:100%; border-collapse:collapse; margin:20px 0; font-size:.82rem; }
-  .data-table th { background:var(--ink); color:var(--bg); font-family:'Playfair Display',serif; font-size:.85rem; padding:10px 14px; text-align:left; }
+  .table-scroll { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; margin:20px 0; }
+  .data-table { width:100%; border-collapse:collapse; font-size:.82rem; min-width:480px; }
+  .data-table th { background:var(--ink); color:var(--bg); font-family:'Playfair Display',serif; font-size:.85rem; padding:10px 14px; text-align:left; white-space:nowrap; }
   .data-table td { padding:9px 14px; border-bottom:1px solid var(--border); vertical-align:top; }
   .data-table tr:nth-child(even) td { background:rgba(180,160,120,0.07); }
   .data-table .yes { color:#3a7a55; font-weight:700; }
   .data-table .no { color:#b84a1a; font-weight:700; }
+  @media (max-width:640px) { .data-table { font-size:.75rem; } .data-table th, .data-table td { padding:6px 9px; } }
   /* Share block */
   .share-block { margin:32px 0 0; padding:20px 0 0; border-top:1px dashed var(--border); }
   .share-title { font-size:.72rem; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); font-weight:700; margin-bottom:12px; }
@@ -294,6 +296,7 @@
 
     <h2 id="comparison">Detector comparison table</h2>
     <p>The major commercial detectors differ in methodology, pricing, and how they handle edge cases. The table below summarizes publicly stated features; independent accuracy varies by text type and evolves with model updates.</p>
+    <div class="table-scroll">
     <table class="data-table">
       <thead>
         <tr>
@@ -342,6 +345,7 @@
         </tr>
       </tbody>
     </table>
+    </div>
 
     <h2 id="case">Case study: what typography normalization does</h2>
     <p>To illustrate how typography affects detection, consider a short essay passage produced by a language model. The raw output contains em dashes, curly quotes, and a Unicode ellipsis &mdash; all standard in AI output. Run through a typical detector, the statistical fingerprint is strong.</p>
